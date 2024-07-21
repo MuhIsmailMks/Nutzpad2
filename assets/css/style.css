@@ -347,6 +347,34 @@ footer .moving-color_container{
     }
 }
 
+/* cloud animation */
+.right_animation_cloud{
+    animation: cloud_right 30s linear infinite;
+}
+
+@keyframes cloud_right {
+    0%,100%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-200px);
+    }
+}
+
+.left_animation_cloud{
+    animation: cloud_left 30s linear infinite;
+}
+
+@keyframes cloud_left {
+    0%,100%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(200px);
+    }
+}
+
+
 
 /* media screen */
 @media screen and (max-width:1024px) {
