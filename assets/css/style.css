@@ -238,3 +238,106 @@ nav .box_animation:hover p{
         bottom: 41%;
     }  
 }
+
+
+
+
+/* text slider animation */
+/* marquee text slider */
+.marquee {
+    display: flex;
+    flex-direction: row;
+    font-size: 31.57px;
+    margin-top: var(--v-medium);
+    overflow: hidden;
+    position: relative;
+
+    width: 100%;
+    height: 166px;
+ 
+    gap: 0;
+    padding-top: .5rem; 
+}
+
+.text_slide_container::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-image: url('../images/flag.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.marquee-left .marquee-el {
+    animation-direction: reverse;
+}
+
+.marquee-el {
+    align-items: center;
+    animation: scroll 100s linear 0s infinite;
+    animation-delay: 0s;
+    animation-play-state: running;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    flex-direction: row;
+    min-width: 100%;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    z-index: 1;
+}
+
+.marquee-el_reverse {
+    align-items: center;
+    animation: scroll 100s linear 0s infinite;
+    animation-delay: 0s;
+    animation-play-state: running;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    flex-direction: row;
+    min-width: 100%;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    z-index: 1;
+}
+
+.marquee span{
+    height: 100%; 
+    color: white;
+    font-family: var(--font-p22_bold);
+    -webkit-text-stroke: .75px black;
+    font-size: 64px;
+    font-weight: 700;
+    padding: 0 2.5rem;
+}
+ 
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    } 100%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll_reverse{
+    0%{
+        transform: translateX(100%);
+    } 100%{
+        transform: translateX(0%);
+    }
+}
+
+
+/* media screen */
+@media screen and (max-width:600px) {
+    .box_animation{  
+        -webkit-text-stroke: .4px black;
+    }
+}
