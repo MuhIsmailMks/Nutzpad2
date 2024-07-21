@@ -150,3 +150,91 @@ footer{
 }
 
  
+
+
+/* btn */
+ 
+/* moving color animation */
+
+/* box animation */ 
+.box_animation{ 
+    overflow: hidden; 
+    cursor: pointer;
+
+    transform: perspective(2000px);
+    transition: .3s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    -webkit-text-stroke: .8px black;
+}
+
+nav .box_animation{
+    clip-path: polygon(8% 19%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.box_animation::before{
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+}
+
+nav .box_animation:hover p{
+    transform:  perspective(800px) rotateY(-20deg);
+}
+
+.box_animation:not(.enter.box_animation):hover{
+    transform: 
+        perspective(300px)
+        rotateY(20deg)
+        rotateX(20deg);
+} 
+
+.moving-color_container{
+    position: absolute;
+    width: 98%;
+    height: 96%;
+    
+    clip-path:inherit;
+    background-color: #D51B3C;
+    
+    z-index: 9;
+    overflow: hidden;
+}
+
+.moving-color {
+    width: 100%;
+    height: 290%; 
+    right: 0; 
+    position: absolute; 
+    bottom: 0%; 
+    animation: move-colors 2s linear infinite;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.moving-color span{
+    width: 110%;
+    height: 14%;
+    background-color: white;
+    position: relative;
+}
+
+@keyframes move-colors {
+    0% {
+        bottom: -43%;
+    }
+    100% {
+        bottom: 41%;
+    }  
+}
