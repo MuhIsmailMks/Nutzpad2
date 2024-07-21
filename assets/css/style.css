@@ -143,12 +143,7 @@ body{
         opacity: 0;
     }
 }
-
-/* footer */
-footer{
-    font-family:  "Montserrat", sans-serif;
-}
-
+ 
  
 
 
@@ -188,7 +183,7 @@ nav .box_animation:hover p{
     transform:  perspective(800px) rotateY(-20deg);
 }
 
-.box_animation:not(.enter.box_animation):hover{
+.box_animation:not(.enter.box_animation):not(footer .box_animation):hover{
     transform: 
         perspective(300px)
         rotateY(20deg)
@@ -239,6 +234,24 @@ nav .box_animation:hover p{
     }  
 }
 
+footer .box_animation{
+    -webkit-text-stroke: 1.5px black;
+}
+
+footer .box_animation::before{
+    width: 100%;
+} 
+
+footer .box_animation:hover{
+    transform: 
+        perspective(3000px)
+        rotateY(20deg)
+        rotateX(20deg);
+} 
+
+footer .moving-color_container{
+    width: 99.5%;
+}
 
 
 
@@ -336,8 +349,24 @@ nav .box_animation:hover p{
 
 
 /* media screen */
+@media screen and (max-width:1024px) {
+    .marquee {  
+        height: 100px; 
+    }
+
+    .marquee span{ 
+        -webkit-text-stroke: .4px black; 
+    }
+     
+}
+
+
 @media screen and (max-width:600px) {
     .box_animation{  
         -webkit-text-stroke: .4px black;
+    }
+
+    footer .box_animation{
+        -webkit-text-stroke: .5px black;
     }
 }
