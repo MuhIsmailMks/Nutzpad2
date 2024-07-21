@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: "collage";
+    src: url('../fonts/college.ttf') format('truetype');
+}
+
+
+body{
+    font-family:  "collage", sans-serif; 
+}
+
+.button_hover img{
+    transition: all .3s ease-in-out;
+}
+
+.button_hover:hover img{
+    transform: scale(1.2);
+}
+
+.button_buy{
+    transition: all .3s ease-in-out;
+    animation: btnAnimation 1s ease-in-out infinite;
+}
+
+.button_buy:hover{
+    animation: none;
+    transform: scale(1.1);
+    background-color: #003EDF;
+}
+
+@keyframes btnAnimation {
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+
+
+
+/* hero */
+.hero h1{
+    text-shadow: 0px 2px 0px #BB133E;
+}
+ 
+#text,
+.hero span{
+    font-family:  "Montserrat", sans-serif;
+}
+ 
+
+.border_sam .content p{
+    font-family:  "Montserrat", sans-serif;
+}
+
+
+.border_sam_container{
+    background: radial-gradient(59.75% 62.71% at 50.42% 41.07%, rgba(6, 25, 54, 0.85) 0%, #061936 75.5%);
+}
+
+/* text animation */
+.text-container {
+    display: flex;
+    align-items: center; 
+}
+
+.cursor {
+    margin-left: 2px;
+    animation: blink 1.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        
+    }
+    50% {
+        opacity: 0;
+    }
+} 
+
+
+/* make */
+.make_crypto{
+    background: linear-gradient(177.45deg, #BB133E 2.13%, rgba(120, 0, 0, 0) 366.45%);
+}
+ 
+
+.image_make_anm.animate{
+    animation: imgAnmtn 1.1s linear; 
+}
+ 
+
+@keyframes imgAnmtn {
+    0%{
+        transform: scale(0);
+    }
+    20%{
+        transform: scale(1) rotate(4deg);
+    }
+    30%{
+        transform: scale(1) rotate(-4deg);
+    }
+    40%{
+        transform: scale(1) rotate(4deg);
+    }
+    50%{
+        transform: scale(1) rotate(-4deg);
+    }
+    60%{
+        transform: scale(1) rotate(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.make_crypto .bg .star_bg{
+    animation: star_bg 5s infinite;
+}
+
+.make_crypto .bg .star_bg.v2{
+    animation: star_bg 5s infinite 4s;
+}
+
+@keyframes star_bg {
+    0%,100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+    20%{
+        opacity: .2;
+    }
+    80%{
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+/* footer */
+footer{
+    font-family:  "Montserrat", sans-serif;
+}
+
+ 
