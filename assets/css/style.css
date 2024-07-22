@@ -25,7 +25,7 @@ body{
 
 .button_buy{
     transition: all .3s ease-in-out;
-    animation: btnAnimation 1s ease-in-out infinite;
+    /* animation: btnAnimation 2.5s ease-in-out infinite; */
 }
 
 .button_buy:hover{
@@ -192,6 +192,10 @@ nav .box_animation:hover p{
         rotateY(20deg)
         rotateX(20deg);
 } 
+
+.button_animation .moving-color_container{
+    width: 100%;
+}
 
 .moving-color_container{
     position: absolute;
@@ -378,7 +382,7 @@ footer .moving-color_container{
 }
 
 /* utils */
-.thin_sroke{
+.thin_stroke{
     -webkit-text-stroke:1.2px black; 
 } 
 
