@@ -183,6 +183,7 @@ nav .box_animation:hover p{
     width: 100%;
 }
 
+
 .moving-color_container{
     position: absolute;
     width: 98%;
@@ -227,6 +228,10 @@ nav .box_animation:hover p{
     }  
 }
 
+
+.address .moving-color_container{
+    background-color: #0085FF;
+} 
 footer .box_animation{
     -webkit-text-stroke: 2.5px black;
 }
@@ -327,6 +332,7 @@ footer .moving-color_container{
     font-size: 64px;
     font-weight: 700;
     padding: 0 2.5rem;
+    text-transform: uppercase;
 }
  
 @keyframes scroll{
