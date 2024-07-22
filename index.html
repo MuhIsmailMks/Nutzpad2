@@ -105,28 +105,55 @@
                 
                 </div>
 
-                <div class="buttons relative flex items-start justify-center flex-wrap gap-[2rem] h-[100px] sm:h-[160px] w-full xl:w-[800px]"> 
-                   <div class="relative button_buy w-full max-w-[700px] xl:w-auto flex justify-center ">
-                    <button class="button_animation  cursor-pointer flex items-center justify-center gap-[.75rem] w-[80%] xl:w-[500px] h-auto relative py-[.25rem] px-[1.5rem] bg-[#BB133E] rounded-[30px] text-white text-[24px] xl:text-[29.17px] overflow-hidden ">
-                        <img src="./assets/images/buy_sam.svg" alt="buy" class="object-contain h-auto w-[30px] z-10">
-                        <p class="z-[1] thin_stroke"> CA: 0X..DEAD</p>
-                        <div class="moving-color_container z-0">
-                            <div class="moving-color">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>   
-                        </div>
-                    </button> 
-                   </div>
+                <div class="buttons relative flex items-start justify-center flex-wrap gap-[2rem] h-[130px] sm:h-[240px] w-[94%] xl:w-[800px]"> 
 
-                   <div class="w-full bottom-0 absolute z-0">
-                     <!-- light -->
-                     <img src="./assets/images/light_on_left.png" alt="" class="h-auto object-contain light_left w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute left-0 bottom-0">
-                     <img src="./assets/images/light_on_right.png" alt="" class="h-auto object-contain light_right w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute right-0 bottom-0">
-                   </div>
+                            
+                   <!-- address -->
+                    <div class="z-10 flex  justify-center text-[1.5rem]    h-[100px] md:h-[200px] xl:h-[400px] w-full xl:w-[80%]     ">
+
+                        <!-- background -->
+                        <div class="bg absolute  top-0 h-full max-w-[1500px] w-[90%] lg:w-[80%] z-[0] flex justify-center items-center">  
+                            <!-- rock bg -->
+                            <img src="./assets/images/rock.png" alt="rock" class="h-auto object-contain absolute w-[310px] min-[550px]:w-[400px] md:w-[500px] xl:w-[800px]">
+                        </div>
+
+                        <div class="ca flex justify-center items-center absolute w-full left-0 top-0 h-full z-[1] ">  
+
+                            <div class="text  cursor-pointer z-[1] relative w-[250px] h-[32px] min-[550px]:w-[320px] md:w-[400px] xl:w-[520px] xl:h-[70px]   flex justify-center items-center copy-contract ">
+
+                                <div class="copied hidden absolute bg-[#fff] top-[-50px] h-[40px] w-[70px]  justify-center items-center ">
+                                    <span class="text-[.8rem] w-[95%] h-[90%] bg-[#fff] flex justify-center items-center ink-free_font">copied</span>
+                                </div>
+                                <input type="text" value=" 0x012....6e53" class="opacity-0 absolute contractInput">
+                                <p class="relative ca_text ink-free_font text-[15px] md:text-[20px] xl:text-[32px] min-[1700px]:text-[40px] z-[1]">Contract : 0x01....6e53</p>
+                                <div class="icon ml-[.75rem] z-10">
+                                    <img src="./assets/images/copyIcon.svg" alt="" class="h-auto object-contain w-[20px] md:w-[25px] lg:w-[30px] min-[1700px]:w-[1vw]">
+                                </div>
+
+                            <div class="moving-color_container backgroundContract z-[0] h-full border-[1px] xl:border-[3px] border-black">
+                                <div class="moving-color w-full ">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>   
+                            </div>
+
+                            </div>
+
+                        </div>
+        
+
+                    </div>  
+
+                    <!-- light -->
+                   <div class="w-full bottom-0 absolute z-0"> 
+                    <img src="./assets/images/light_on_left.png" alt="" class="h-auto object-contain light_left w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute left-0 bottom-0">
+                    <img src="./assets/images/light_on_right.png" alt="" class="h-auto object-contain light_right w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute right-0 bottom-0">
+                  </div>
+                   
                 </div>
+
             </div>
 
         </section>
@@ -418,56 +445,82 @@
         });   
 
 
-        // contract 
-        document.addEventListener('DOMContentLoaded', function() {
+// contract 
+document.addEventListener('DOMContentLoaded', function() {
+  
+  let light_left = document.querySelector('.light_left');
+  let light_right = document.querySelector('.light_right');
+  let backgroundContract = document.querySelector('.backgroundContract');
+
+  const copyContractBtns = document.querySelectorAll('.copy-contract');
+  
+  copyContractBtns.forEach(copyContractBtn => {
+      copyContractBtn.addEventListener('click', function() { 
         
-        let light_left = document.querySelector('.light_left');
-        let light_right = document.querySelector('.light_right');
-        let backgroundContract = document.querySelector('.backgroundContract');
+      let copiedMessage = copyContractBtn.querySelector('.copied');
+      let contractInput = copyContractBtn.querySelector('.contractInput');
+      let movingColor_container = copyContractBtn.querySelector('.moving-color_container');
 
-        const copyContractBtns = document.querySelectorAll('.copy-contract'); 
+        contractInput.select();
+        document.execCommand('copy');
+    
+        // Tampilkan pesan terkopikan
+        copiedMessage.classList.add('flex')
+        copiedMessage.classList.remove('hidden');
+
         
-        // JavaScript untuk mengganti gambar
-        const imagesLeft = [
-            './assets/images/light_off_left.png',
-            './assets/images/light_on_left.png', 
-        ];
+        // movingColor_container.classList.add('hidden')
+        // light_left.src = './assets/images/light_off_left.png'
+        // light_right.src = './assets/images/light_off_right.png'
+     
+        setTimeout(function() {
+          copiedMessage.classList.remove('flex')
+          copiedMessage.classList.add('hidden')
+        }, 2000);
+      });
+  })
+     
+    // JavaScript untuk mengganti gambar
+  const imagesLeft = [
+      './assets/images/light_off_left.png',
+      './assets/images/light_on_left.png', 
+  ];
 
-        const imagesRight = [
-            './assets/images/light_off_right.png',
-            './assets/images/light_on_right.png', 
-        ];
+  const imagesRight = [
+    './assets/images/light_off_right.png',
+    './assets/images/light_on_right.png', 
+  ];
 
-        let currentIndex = 0;
-        let currentIndex2 = 0;
-        let elseTrue = false;
+  let currentIndex = 0;
+  let currentIndex2 = 0;
+  let elseTrue = false;
 
-        function changeImageLeft() { 
-            currentIndex = (currentIndex + 1) % imagesLeft.length;
-            light_left.src = imagesLeft[currentIndex];
-        }
+  function changeImageLeft() { 
+      currentIndex = (currentIndex + 1) % imagesLeft.length;
+      light_left.src = imagesLeft[currentIndex];
+  }
 
-        function changeImageRight() { 
-            currentIndex2 = (currentIndex2 + 1) % imagesRight.length;
-            light_right.src = imagesRight[currentIndex2];
-        }
+  function changeImageRight() { 
+    currentIndex2 = (currentIndex2 + 1) % imagesRight.length;
+    light_right.src = imagesRight[currentIndex2];
+  }
 
-        function bgContract() { 
-            elseTrue = !elseTrue
-            if(elseTrue === false){
-            backgroundContract.classList.add('hidden')
-            } else {
-            backgroundContract.classList.remove('hidden')
-            }
-        }
+  function bgContract() { 
+    elseTrue = !elseTrue
+    if(elseTrue === false){
+      backgroundContract.classList.add('hidden')
+    } else {
+      backgroundContract.classList.remove('hidden')
+    }
+  }
 
-        setInterval(changeImageLeft, 2000);
-        setInterval(changeImageRight, 2000);
-        setInterval(bgContract, 2000);
+  setInterval(changeImageLeft, 2000);
+  setInterval(changeImageRight, 2000);
+  setInterval(bgContract, 2000);
 
 
-        });
-        
+  });
+ 
 
 
         // text animation
