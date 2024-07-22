@@ -20,10 +20,31 @@
 <body> 
 
     <style>
-        .about_container{
-            transform-origin: 50% 100%;
-            transform: rotateX(50deg);
+        .about{
+            perspective: 400px;
         }
+
+        .about_container{
+            transform-origin: 50% 100%;  
+            transform: rotateX(20deg) translateY(0px);
+            opacity: 0;
+        }
+
+        .about_container.active{ 
+            transform: rotateX(20deg) translateY(0px);
+            animation: animateCrawl 3s linear forwards;
+            opacity: 1;
+        }
+ 
+        @keyframes animateCrawl {
+            0% {
+                transform: rotateX(50deg) translateY(900px);
+            }
+            100% {
+                transform: rotateX(20deg) translateY(0px);
+            }
+        }
+
     </style>
     
     <div class="w-full h-auto bg-[#061B35] max-w-[100%] relative overflow-hidden" >
@@ -197,17 +218,13 @@
                 <img src="./assets/images/make_crypto.png" alt="sam" class="h-auto object-contain max-w-[90%] w-[633px] image_make_anm">
             </div>
 
-            <div class="about relative w-[616px] text-white text-center flex justify-center flex-col items-center">
+            <div id="about"  class="about relative w-[616px] text-white text-center flex justify-center flex-col items-center overflow-hidden">
                 <div class="about_container w-full flex justify-center flex-col items-center">
-                    <h1 class="xl:w-[458px] leading-[1.05] mb-[1rem] text-[60px] xl:text-[100px]" data-aos-duration="1000"
-                    data-aos-delay="400"
-                    data-aos="fade-right">MAKE
+                    <h1 class="xl:w-[458px] leading-[1.05] mb-[1rem] text-[60px] xl:text-[100px]"  >MAKE
                         AMERICA
                         GREAT
                         AGAIN</h1>
-                    <p class="make_text leading-[27.6px] text-[17px] xl:text-[23px] w-[80%] xl:w-auto" data-aos-duration="1000"
-                    data-aos-delay="800"
-                    data-aos="fade-right">
+                    <p class="make_text leading-[27.6px] text-[17px] xl:text-[23px] w-[80%] xl:w-auto"  >
                     Combining the entrepreneurial vision of Elon Musk with the political fervor of the MAGA (Make America Great Again) movement. This initiative, dubbed "American Innovation First," aims to harness Musk's expertise in technology and innovation to Make America Great Again.</p> 
                 </div>
             </div>
@@ -422,7 +439,7 @@
                     <span class="h-full relative bg-white w-[1px] md:w-[2px]"></span>
                     <span class="h-full relative bg-white w-[1px] md:w-[2px]"></span>
                 </div>
-                <p class="w-auto md:w-[30%] md:pl-[2rem]">support@maga.com</p>
+                <p class="w-auto md:w-[30%] md:pl-[2rem]">Support@Magaelon.vip</p>
             </div>
  
         </footer> 
@@ -578,21 +595,49 @@ document.addEventListener('DOMContentLoaded', function() {
   
         // image animation
         document.addEventListener("DOMContentLoaded", function() {
-    const image = document.querySelector('.image_make_anm');
+        const image = document.querySelector('.image_make_anm');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    image.classList.add('animate'); 
-                    observer.unobserve(entry.target);
-                }, 100);   
-            }
-        });
-    }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        image.classList.add('animate'); 
+                        observer.unobserve(entry.target);
+                    }, 100);   
+                }
+            });
+        }, { threshold: 0.1 });
 
-    observer.observe(image);
+        observer.observe(image);
+    });
+
+
+
+ 
+
+
+
+
+    // Fungsi untuk mengecek apakah elemen terlihat di viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Event listener untuk event 'scroll'
+window.addEventListener('scroll', function() {
+    const aboutSection = document.querySelector('.about_container');
+    
+    if (isElementInViewport(aboutSection)) {
+        aboutSection.classList.add('active');
+    }   
 });
+
 
 
     </script>
