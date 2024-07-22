@@ -22,21 +22,7 @@ body{
 .button_hover:hover img{
     transform: scale(1.2);
 }
-
-.button_buy{
-    transition: all .3s ease-in-out;
-    /* animation: btnAnimation 2.5s ease-in-out infinite; */
-}
-
-/* .button_buy:hover{
-    animation-play-state: paused;
-    transform: scale(1.1);
-} */
-
-.button_buy:hover button{
-    background-color: #003EDF; 
-}
-
+  
 @keyframes btnAnimation {
     0%,100%{
         transform: scale(1);
@@ -260,7 +246,12 @@ footer .moving-color_container{
     width: 99.5%;
 }
 
-
+.social{
+    background-image: url('../images/flag_social.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* text slider animation */
 /* marquee text slider */
