@@ -28,10 +28,10 @@ body{
     /* animation: btnAnimation 2.5s ease-in-out infinite; */
 }
 
-.button_buy:hover{
+/* .button_buy:hover{
     animation-play-state: paused;
     transform: scale(1.1);
-}
+} */
 
 .button_buy:hover button{
     background-color: #003EDF; 
