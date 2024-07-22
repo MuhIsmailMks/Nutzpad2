@@ -400,10 +400,14 @@ footer .moving-color_container{
 @media screen and (min-width:2500px) {
     .marquee { 
         height: 5vw; 
-    }
+    } 
     
-    /* about */ 
 
+}
+
+
+@media screen and (min-width:1200px) {
+    /* about */  
     .about_container{
         transform-origin: 50% 100%;  
         transform: rotateX(20deg) translateY(0px);
@@ -424,7 +428,6 @@ footer .moving-color_container{
             transform: rotateX(20deg) translateY(0px);
         }
     }
-
 }
 
 @media screen and (max-width:1024px) {
