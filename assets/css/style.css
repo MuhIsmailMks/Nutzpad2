@@ -29,9 +29,12 @@ body{
 }
 
 .button_buy:hover{
-    animation: none;
+    animation-play-state: paused;
     transform: scale(1.1);
-    background-color: #003EDF;
+}
+
+.button_buy:hover button{
+    background-color: #003EDF; 
 }
 
 @keyframes btnAnimation {
