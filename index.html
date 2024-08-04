@@ -3,619 +3,958 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo.png"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/Logo.png">  
+
     <!-- fonts -->
-    <script src="https://c.webfontfree.com/c.js?f=MergeW00-Bold" type="text/javascript"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- locomotive -->
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css">
+
+    <!-- scroll magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+
     <!-- AOS scroll effect cdn --> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <!-- swiper -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- tailwind css cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- css link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Maga</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Nutzpad</title>
+
 </head>
 <body> 
 
-    <style>
-       
-    </style>
-    
-    <div class="w-full h-auto bg-[#061B35] max-w-[100%] relative overflow-hidden" >
-        
+ 
+    <div class="max-w-[100%] flex gap-y-10 flex-col  items-center relative  overflow-hidden h-auto"  data-scroll-container>
+
+        <aside class="texture">
+            <div class="bg ">
+              <img src="./static/images/bg.png" alt="">
+            </div>
+        </aside>
+
         <!-- navbar -->
-        <nav class="w-full z-[999] absolute left-0 top-0 md:top-[0px] xl:pt-[1rem] flex justify-center items-center">
-          
-            <div class="relative w-full flex justify-between h-auto max-w-[2100px] px-[1rem] md:px-[5rem]">
+        <nav data-scroll-section class="relative h-auto w-full z-[9999] flex_center">
+         
+            <!-- nav  -->
+            <div class="flex_between relative z-10 w-full lg:w-[70%] h-[70px] md:h-[100px] min-[2000px]:h-[140px]  px-4 md:px-[2rem] max_width_element"> 
 
-            <div class="logo relative flex items-center justify-center gap-[.25rem] md:gap-[1rem]">
-                <img src="./assets/images/logo.png" alt="" class="h-auto object-contain w-[50px] md:w-[72.25px] min-[1700px]:w-[110px] rounded-full">
-                <p class="text-[1rem] sm:text-[1.5rem] xl:text-[1.95rem] uppercase text-white">Maga Elon</p>
+                <div  class="menu flex_center gap-[1.5vw]">
+                    
+                    <a href="#menu" class="menu_btn cursor-pointer duration-200 hover:scale-110" >
+                        <img src="./static/images/menu.png" alt="" class="w-auto object-contain h-[8vw] md:h-[40px] xl:h-[35px] min-[1800px]:h-[50px]">
+                    </a>
+
+                    <a href="https://nutzpad-docs.gitbook.io/nutzpaper" target="_blank" class="cursor-pointer duration-200 hover:scale-110 relative flex_center max-md:hidden" >
+
+                        <img src="./static/images/cloud_social.png" alt="" class="w-auto object-contain h-[10vw] md:h-[40px] xl:h-[35px] min-[1800px]:h-[50px] relative">
+
+                        <img src="./static/images/svg/btnPaper.svg" alt="" class="w-[30%] h-auto object-contain absolute z-10">
+                    </a>
+
+                </div>
+                
+                <div class="logo absolute left-[50%] translate-x-[-50%]">
+                    <img src="./static/images/Logo.png" alt="" class="w-auto object-contain h-[27px] md:h-[50px] xl:h-[4vw] min-[2000px]:h-[100px]">
+                </div>
+    
+                <div class="social flex_center gap-2 md:gap-4 "> 
+
+                    <a href="https://x.com/nutzpad" target="_blank" class="cursor-pointer duration-200 hover:scale-110 relative flex_center max-md:hidden " >
+                        <img src="./static/images/cloud_social.png" alt="" class="w-auto object-contain h-[10vw] md:h-[40px] xl:h-[35px] min-[1800px]:h-[50px] relative">
+
+                        <img src="./static/images/svg/twitter.svg" alt="" class="w-[30%] h-auto object-contain absolute z-10">
+
+                    </a>
+
+                    <a href="https://t.me/nutzpad" target="_blank" class="cursor-pointer duration-200 hover:scale-110 max-md:hidden relative flex_center" >
+                     
+                        <img src="./static/images/cloud_social.png" alt="" class="w-auto object-contain h-[10vw] md:h-[40px] xl:h-[35px] min-[1800px]:h-[50px] relative">
+
+                        <img src="./static/images/svg/telegram.svg" alt="" class="w-[35%] h-auto object-contain absolute z-10 ">
+                    </a>
+
+                    <a href="https://www.pinksale.finance/launchpad/bsc/0x66E413DAa23878fcF4366aFD2bAC99a55f9b8De0" target="_blank" class="relative  md:w-[6vw]  md:h-[30px] xl:w-[100px] xl:h-[30px] min-[1800px]:w-[120px] min-[1800px]:h-[38px] flex_center button_animation border-[3px] border-[#fffb14]  rounded-r-xl overflow-hidden duration-200 hover:scale-110 max-md:hidden ">
+                        <p class="z-10 relative  uppercase text-[#bb6a00] thin_stroke text-[12px]">PINKSALE</p>
+                        <div class="moving-color_container">
+                            <div class="moving-color">
+                                <span></span>
+                                <span style="animation-delay: 1s;"></span>
+                                <!-- <span style="animation-delay: 1.3s;"></span> -->
+                                <!-- <span style="animation-delay: 1s;"></span>
+                                <span style="animation-delay: 1s;"></span> -->
+                            </div>   
+                        </div>
+                    </a>
+
+                    <!-- hidden in desktop -->
+                    <a href="https://nutzpad-docs.gitbook.io/nutzpaper" target="_blank" class="cursor-pointer duration-200 hover:scale-110 relative flex_center md:hidden" >
+
+                        <img src="./static/images/cloud_social.png" alt="" class="w-auto object-contain  h-[9vw]  md:h-[40px] xl:h-[45px] min-[1800px]:h-[50px] relative">
+
+                        <img src="./static/images/svg/btnPaper.svg" alt="" class="w-[30%] h-auto object-contain absolute z-10">
+                        
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="social_media relative max-w-[1500px]  h-[80px] min-[1700px]:h-[110px]  flex justify-end items-center gap-[.55rem] md:gap-[1rem] xl:gap-[2rem]">
-                <a href="https://www.dextools.io/app/en/ether/pair-explorer/0x9596AaFe4D51b439502F6A6DFc097cB11c76Fd66?t=1721685951017" target="_blank" class="button_hover" 
-                data-aos="fade-left"
-                data-aos-delay="400"
-                data-aos-duration="1000">
-                    <img src="./assets/images/dextoolsIcon.png" alt="dex" class="object-contain h-auto max-[400px]:w-[25px] w-[30px] md:w-[40px] min-[1700px]:w-[60px]">
-                </a>
-                <a href="https://t.me/MagaElonPortal" target="_blank" class="button_hover" 
-                data-aos="fade-left"
-                data-aos-delay="600"
-                data-aos-duration="1000">
-                    <img src="./assets/images/telegram.svg" alt="dex" class="object-contain h-auto max-[400px]:w-[25px] w-[30px] md:w-[40px] min-[1700px]:w-[60px]">
-                </a>
-                <a href="https://x.com/magaelonERC" target="_blank" class="button_hover" 
-                data-aos="fade-left"
-                data-aos-delay="800"
-                data-aos-duration="1000">
-                    <img src="./assets/images/twitter.svg" alt="dex" class="object-contain h-auto max-[400px]:w-[25px] w-[30px] md:w-[40px] min-[1700px]:w-[60px]">
-                </a>
-                <a href="#"  class="link box_animation relative w-[110px] md:w-[188px] h-[40px] md:h-[60.05px] min-[1500px]:w-[230px] min-[1500px]:h-[70px]  justify-center items-center overflow-hidden flex ">
-                    <p class="relative  duration-300 text-[#FFFFFF] z-[10] text-[12px] md:text-[20px] min-[1500px]:text-[25px] pl-[.5rem] pt-[.55rem]">Buy $Maga Elon</p> 
-                    <div class="moving-color_container">
-                        <div class="moving-color">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>   
+            <!-- menu dropdown -->
+             <div class="menu_drop w-full absolute top-[0%] left-0 flex_center z-[99] xl:h-[20vw]">
+
+                <div class="bg w-full h-full absolute left-0 top-0 z-[-1]">
+                    <img src="./static/images/bg.png" alt="">
+                </div>
+
+                <div id="close_menu" class="close_menu absolute right-6 top-6 md:right-12 md:top-12 border-white border-[2px] lg:h-[50px] min-[1500px]:h-[75px] lg:w-[50px] min-[1500px]:w-[75px] rounded-full  bg-[#b00] z-[999] flex_center cursor-pointer">
+                    <img src="./static/images/close.svg" alt="" class="w-[100%] h-auto object-contain relative">
+                </div>
+ 
+                <!-- menu link -->
+                 <div class="w-full h-auto max-[1000px]:items-start flex_center relative z-10 flex-wrap gap-[2rem]"> 
+
+                    <!-- nav links -->
+                    <ul class="w-[90%] lg:w-[50%]  max-w-[1400px] h-full   relative flex justify-between flex-wrap gap-3">
+                        <li>
+                            <a href="#about"        
+                             data-scroll-to
+                            data-text="ABOUT"> 
+                                <span>about</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tokenomics" 
+                              data-scroll-to
+                            data-text="tokenomics"> 
+                                <span>tokenomics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#howToBuy" 
+                              data-scroll-to
+                            data-text="how to buy"> 
+                                <span>how to buy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#roadmap" 
+                              data-scroll-to
+                            data-text="roadmap"> 
+                                <span>roadmap</span>
+                            </a>
+                        </li> 
+                    </ul>
+
+                    <!-- social -->
+                    <div class="w-full  lg:w-[25%] relative flex_center flex-wrap gap-4"> 
+
+                        <!-- crypto links -->
+
+                        <!-- social media -->
+                        <div class="social flex_center gap-[5vw] md:gap-4 md:hidden flex-wrap">
+                            <a href="https://x.com/nutzpad" target="_blank" class="cursor-pointer duration-200 hover:scale-110" >
+                                <img src="./static/images/x_nav.png" alt="" class="w-auto object-contain h-[10vw]  ">
+                            </a>
+                            <a href="https://t.me/nutzpad" target="_blank" class="cursor-pointer duration-200 hover:scale-110" >
+                                <img src="./static/images/tele_nav.png" alt="" class="w-auto object-contain h-[10vw]  ">
+                            </a>
+
+                            <a href="https://www.pinksale.finance/launchpad/bsc/0x66E413DAa23878fcF4366aFD2bAC99a55f9b8De0" target="_blank" class="relative w-[100px] md:w-[100px]  h-[30px]  xl:w-[130px] flex_center button_animation border-[2px] border-[#fffb14]  rounded-r-xl overflow-hidden hidden">
+                                <p class="z-10 relative text-[12px]  text-[#bb6a00] thin_stroke">PINKSALE</p>
+                                <div class="moving-color_container">
+                                    <div class="moving-color">
+                                        <span></span>
+                                        <span style="animation-delay: 1s;"></span> 
+                                    </div>   
+                                </div>
+                            </a>
+
+                        </div>
+
                     </div>
-                </a>
-            </div>
 
-           </div>
+                 </div>
+
+             </div>
 
         </nav>
 
-        <!-- hero -->
-        <section class="hero relative w-full h-auto flex flex-col items-center pt-[100px] pb-[70px] xl:pt-[90px] overflow-hidden">
-
-            <div class="bg_video w-[110vw] h-[110%] absolute left-[-1%] top-0">
-                <video class="videoAutoPlay absolute top-0 w-[110vw] h-full xl:h-full object-cover opacity-[0.03]" autoplay loop muted playsinline>
-                    <source src="./assets/american_flag.mp4" type="video/mp4"> 
-                </video>
-            </div>
-
-            <div class="image relative flex justify-center">
-                <img src="./assets/images/logo.png" alt="" class="object-contain rounded-full h-auto w-[80%] xl:w-[445px]">
-            </div>
-
-            <div class="content relative w-full flex flex-col items-center xl:pb-[3rem]">
-
-                <h1 class="text-white text-[50px] xl:text-[100px]"
-                data-aos-duration="1000"
-                data-aos-delay="400"
-                data-aos="fade-right">MAGA ELON</h1>
-
-                <div class="relative mb-[3rem] text-center text-[3vw] min-[440px]:text-[3.5vw] min-[500px]:text-[3.75vw] min-[800px]:text-[25px] xl:text-[30px] tracking-[3px] text-white border-white border-[3px] h-[50px] xl:h-[70px] max-w-[90%] w-[600px]" 
-                >
-
-                <div class="text-container flex justify-center items-center w-full h-full max-[500px]:px-[8vw] max-[764px]:px-[5vw]">
-                    <span id="text" class="font-[700]  uppercase min-w-[90%] min-[400px]:min-w-[50%] w-full md:w-[93%]  text-left"></span>
-                    <span class="cursor" id="cursor"></span>
-                </div> 
-                
-                </div>
-
-                <div class="buttons relative flex items-start justify-center flex-wrap gap-[2rem] h-[130px] sm:h-[240px] w-[94%] xl:w-[800px]"> 
-
-                            
-                   <!-- address -->
-                    <div class="z-10 flex address justify-center text-[1.5rem]    h-[100px] md:h-[200px] xl:h-[400px] w-full xl:w-[80%]     ">
-
-                        <!-- background -->
-                        <div class="bg absolute  top-0 h-full max-w-[1500px] w-[90%] lg:w-[80%] z-[0] flex justify-center items-center">  
-                            <!-- rock bg -->
-                            <img src="./assets/images/rock.png" alt="rock" class="h-auto object-contain absolute w-[310px] min-[550px]:w-[400px] md:w-[500px] xl:w-[800px]">
-                        </div>
-
-                        <div class="ca flex justify-center items-center absolute w-full left-0 top-0 h-full z-[1] ">  
-
-                            <div class="text  cursor-pointer z-[1] relative w-[250px] h-[32px] min-[550px]:w-[320px] md:w-[400px] xl:w-[520px] xl:h-[70px]   flex justify-center items-center copy-contract ">
-
-                                <div class="copied hidden absolute bg-[#fff] top-[-50px] h-[40px] w-[70px]  justify-center items-center ">
-                                    <span class="text-[.8rem] w-[95%] h-[90%] bg-[#fff] flex justify-center items-center ink-free_font">copied</span>
-                                </div>
-                                <input type="text" value=" 0x2d175322f18dE78411cadECabC5fCE0C2BF115a8" class="opacity-0 absolute contractInput">
-                                <p class="relative ca_text ink-free_font text-[15px] md:text-[20px] xl:text-[32px] min-[1700px]:text-[40px] z-[1]">Contract : 0x2d17.....115a8</p>
-                                <div class="icon ml-[.75rem] z-10">
-                                    <img src="./assets/images/copyIcon.svg" alt="" class="h-auto object-contain w-[20px] md:w-[25px] lg:w-[30px] min-[1700px]:w-[1vw]">
-                                </div>
-
-                            <div class="moving-color_container backgroundContract z-[0] h-full border-[1px] xl:border-[3px] border-black">
-                                <div class="moving-color w-full ">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>   
-                            </div>
-
-                            </div>
-
-                        </div>
-        
-
-                    </div>  
-
-                    <!-- light -->
-                   <div class="w-full bottom-0 absolute z-[10]"> 
-                    <img src="./assets/images/light_on_left1.png" alt="" class="h-auto object-contain light_left w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute left-0 bottom-0">
-                    <img src="./assets/images/light_on_right1.png" alt="" class="h-auto object-contain light_right w-[140px] z-[1] min-[550px]:w-[160px] md:w-[200px] xl:w-[250px] absolute right-0 bottom-0">
-                  </div>
-                   
-                </div>
-
-            </div>
-
-        </section>
-
-          <!-- text slider -->
-          <section class="relative w-full h-auto max-w-[100%] z-[100]"> 
-
-            <div class="text_slide_container w-full flex justify-end items-center xl:h-auto relative"> 
-             
-                 <div class="marquee_container relative  left-0 bottom-0 w-[68vw] md:w-[67vw] h-auto">
-                     <div class="marquee bordered pb-[.7rem] marquee-left">
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                     </div>
-                 </div>
+        <!-- hero section -->
+         <section data-scroll-section  class="flex_center max_width_element lg:mt-[-5vw] min-[1500px]:mt-[-4.5vw] min-[2000px]:mt-[-1vw] flex-col z-0">
          
-             </div>
- 
-         </section>
- 
+            <!-- bg hero -->
+             <img src="./static/images/hero_bg.png" alt="nutz hero" class="w-[95%] lg:w-[65%] h-auto object-contain">
+     
+             <!-- sun -->
+             <img src="./static/images/sun.png" alt="nutz hero" class="w-[30%] lg:w-[16%] h-auto object-contain absolute left-[10%] lg:left-[23%] top-[10%] lg:top-[18%] rotate_animation z-[995]"  >
 
-        <!-- make -->
-        <section class="make_crypto  relative w-full h-auto min-[1390px]:h-[818px] flex items-center justify-center flex-wrap  max-[1200px]:gap-[30px] min-[1450px]:gap-[40px] py-[3rem]">
+             <!-- kyc link -->
+              <a href="https://pinksale.notion.site/Nutzpad-KYC-Verification-38f490edab3f4ad89ebdd477cbdea8cb?pvs=4" target="_blank" class="absolute z-[9999] top-[29.5%] left-[23%] lg:top-[35%] lg:left-[29%] w-[3.7vw] max-w-[90px] h-[3.7vw] max-h-[90px]  rounded-full flex_center duration-200 hover:scale-105">
+                <span class="medium_stroke text-white lg:text-[19px] text-[2.7vw] min-[1700px]:text-[21px]">KYC</span>
+              </a>
 
-            <div class="absolute  bg w-full h-full top-[-5vw]"> 
-                <div class="bg_star_container absolute bottom-[-5vw] left-0 w-full h-full  overflow-hidden">
-                    <img src="./assets/images/sequence.png" alt="" class="star_bg object-cover w-full h-full opacity-[0.2]">
-                    <img src="./assets/images/sequence.png" alt="" class="star_bg v2 object-cover w-full h-full opacity-[0.2] absolute bottom-0 left-0">
+             <!-- part cloud hero -->
+             <img src="./static/images/cloud_hero_part.png" alt="cloud hero" class="w-[23%] lg:w-[16%] h-auto object-contain absolute left-[5%] lg:left-[19%] top-[32%] md:top-[24vw] lg:top-[41%] z-[996] ">
+
+             <!-- buy -->
+             <a href="#" class="w-[13%] lg:w-[10%] h-auto object-contain absolute left-[22%] lg:left-[32%] top-[-10%] lg:top-[0%]  cursor-pointer hero_link_animation buy z-[999]">
+
+                <img src="./static/images/buy_hero.png" alt="nutz hero" class="w-full h-auto object-contain duration-300 rotate-[-6deg]">
+
+                <aside class="alert h-auto absolute right-[-150%] lg:right-[-120%]  top-[50px] lg:top-[130px] bg-transparent"><div class="speech w-[180%]  lg:w-[200px] max-lg:text-[10px]">READY SET... <br>
+                    APE NOW CHAMP!    
                 </div>
-            </div>
-            <div class="image relative flex justify-center">
-                <img src="./assets/images/make_crypto.png" alt="sam" class="h-auto object-contain max-w-[90%] w-[633px] image_make_anm">
-            </div>
 
-            <div id="about"  class="about relative w-[616px] text-white text-center flex justify-center flex-col items-center overflow-hidden">
-                <div class="about_container w-full flex justify-center flex-col items-center">
-                    <h1 class="xl:w-[458px] leading-[1.05] mb-[1rem] text-[60px] xl:text-[100px]"  >MAKE
-                        AMERICA
-                        GREAT
-                        AGAIN</h1>
-                    <p class="make_text leading-[27.6px] text-[17px] xl:text-[23px] w-[80%] xl:w-auto"  >
-                    Combining the entrepreneurial vision of Elon Musk with the political fervor of the MAGA (Make America Great Again) movement. This initiative, dubbed "American Innovation First," aims to harness Musk's expertise in technology and innovation to Make America Great Again.</p> 
-                </div>
-            </div>
+            </aside>
 
-        </section>
+             </a>
 
-              
-        <!-- text slider -->
-        <section class="relative w-full h-auto max-w-[100%] z-[100]"> 
-
-            <div class="text_slide_container w-full flex justify-end items-center xl:h-auto relative"> 
              
-                 <div class="marquee_container relative  left-0 bottom-0 w-[68vw] md:w-[67vw] h-auto">
-                     <div class="marquee bordered pb-[.7rem] marquee-left">
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                     </div>
-                 </div>
-         
+             <!-- chart -->
+             <a href="#" class="w-[14%] lg:w-[10%] h-auto object-contain absolute right-[12%] lg:right-[20%] top-[0%] lg:top-[14%]  cursor-pointer hero_link_animation chart z-[999]" style="animation-delay: -1s;">
+
+                <img src="./static/images/chart_hero.png" alt="nutz chart" class="w-full h-auto object-contain duration-300 rotate-[10deg]"  >
+
+                <aside class="alert h-auto absolute left-[-150%] lg:left-[-140%] top-[80px] lg:top-[170px] bg-transparent">
+                    <div class="speech w-[130%]  lg:w-[200px] max-lg:text-[10px]">CHECK THE CHART!</div>
+                </aside>
+
+             </a>
+
+              <!-- plane -->
+             <div class="top-[10%] w-[80%] lg:w-[45%] h-auto object-contain absolute max-lg:ml-[20vw] plane_animation">
+                <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="8"  >
+                    <img src="./static/images/Plane.png" alt="nutz hero" class="w-full float_animation lg:ml-[100px]" style="animation-delay: -5s;">
+                </div>
              </div>
- 
+
+              <!-- wind -->
+             <div class="top-0 w-[65%] lg:w-[55%] h-auto object-contain absolute">
+                <img src="./static/images/Wind.png" alt="nutz hero" class="w-full float_animation">
+             </div>
+
+             <div class="w-full relative md:hidden flex_center mt-[2rem]">
+                <a href="https://www.pinksale.finance/launchpad/bsc/0x66E413DAa23878fcF4366aFD2bAC99a55f9b8De0" target="_blank" class="relative  w-[50%] h-[9vw] flex_center button_animation border-[3px] border-[#fffb14]  rounded-r-2xl overflow-hidden duration-200 hover:scale-110   ">
+                    <p class="z-10 relative  uppercase text-[#bb6a00] thin_stroke text-[20]">PINKSALE</p>
+                    <div class="moving-color_container">
+                        <div class="moving-color">
+                            <span></span>
+                            <span style="animation-delay: 1s;"></span> 
+                        </div>   
+                    </div>
+                </a>
+             </div>
+
          </section>
 
-          <!-- tokenomics -->
-          <section class="border_sam_container relative w-full flex justify-center items-center flex-col h-auto xl:h-[684px] mt-[3rem] xl:mt-0 pb-[50px]">
-
-            <div class="bg_flag absolute left-0 top-0 h-full w-full">
-                <img src="./assets/images/Background_uncle.png" alt="" class="absolute left-0 bottom-0 w-full h-full object-cover opacity-[0.04] ">
-            </div>
-
-            <h1 class="w-full text-center text-white text-[50px] xl:text-[140px] tracking-[2px] xl:tracking-[5px]">TOKENOMICS</h1>
-
-           <div class="relative mt-[50px] w-full flex justify-center xl:justify-between max-w-[1400px] xl:px-[3rem] flex-wrap items-center gap-[2rem]">
-
-            <div class="relative border_sam w-[231px] h-[200px] xl:h-[233px] flex justify-center items-center border-[4px] border-[#BB133E]"
-            data-aos-duration="1000"
-                    data-aos-delay="600"
-                    data-aos="fade-right">
-                
-                <div class="bg_star absolute top-[-18px] xl:top-[-23px]">
-                    <img src="./assets/images/star.png" alt="star" class="object-contain h-auto w-[30px] xl:w-[42px]">
-                </div>
-                <div class="content text-white text-center">
-                    <h2 class="leading-[1] uppercase text-[40px] xl:text-[30px]">
-                    <span class="text-[100px] xl:text-[100px]">0%</span>
-                    <br>
-                    TAXES</h2> 
-                </div>
-            </div>
-
-            <div class="relative border_sam w-[231px] h-[200px] xl:h-[233px] flex justify-center items-center border-[4px] border-[#BB133E]"
-            data-aos-duration="1000"
-                    data-aos-delay="500"
-                    data-aos="fade-right">
-                
-                <div class="bg_star absolute top-[-18px] xl:top-[-23px]">
-                    <img src="./assets/images/star.png" alt="star" class="object-contain h-auto w-[30px] xl:w-[42px]">
-                </div>
-                <div class="content text-white text-center">
-                    <h2 class="leading-[1] w-full uppercase  text-[40px] xl:text-[30px]">
-                    <span class="text-[100px] xl:text-[100px]">lp</span>
-                    <br>
-                    Burnt</h2> 
-                </div>
-            </div>
-
-            <div class="relative border_sam w-[231px] h-[200px] xl:h-[233px] flex justify-center items-center border-[4px] border-[#BB133E]"
-            data-aos-duration="1000"
-                    data-aos-delay="400"
-                    data-aos="fade-right">
-                
-                <div class="bg_star absolute top-[-18px] xl:top-[-23px]">
-                    <img src="./assets/images/star.png" alt="star" class="object-contain h-auto w-[30px] xl:w-[42px]">
-                </div>
-                <div class="content text-white text-center">
-                    <h2 class="leading-[1.1] uppercase text-[20px]  ">
-                    <span class="text-[55px] xl:text-[60px]">SUPPLY</span>
-                    <br> 
-                    420,690,000,000,000</h2> 
-                </div>
-            </div>
-
-           </div>
-
-        </section>
-
-              
-        <!-- text slider -->
-        <section class="relative w-full h-auto max-w-[100%] z-[100] mb-[50px]"> 
-
-            <div class="text_slide_container w-full flex justify-end items-center xl:h-auto relative"> 
+        <!-- about section -->
+        <section data-scroll-section class=" flex_center max_width_element flex-col">
              
-                 <div class="marquee_container relative  left-0 bottom-0 w-[68vw] md:w-[67vw] h-auto">
-                     <div class="marquee bordered pb-[.7rem] marquee-left">
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                         <div class="marquee-el" style="animation-duration: 75s;">
-                             <p>
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                                 <span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;<span>BUY MAGA ELON</span>&nbsp;&nbsp;
-                             </p>
-                         </div>
-                     </div>
-                 </div>
-         
-             </div>
- 
-         </section>
+            <!-- about image -->
+            <div class="relative w-[80%] lg:w-[65%] h-[80vw] max-h-[2000px] flex_center">
+                
+                <!-- ballon -->
+                <!-- center -->
+                 <div class="w-[35vw] max-w-[900px] h-auto object-contain absolute z-[99] flex_center float_animation">
+                    <img src="./static/images/ballon1.png" alt=""  class="image_style_animation   relative">
 
-        <!-- footer or contact -->
-          <!--  footer-->
-          <footer class="footer  relative w-full h-[600px] min-[500px]:h-[700px] md:h-[800px] xl:h-[980px]  max-w-[100%] flex overflow-hidden justify-center items-end pt-[100px]">
-
-            <!-- bg and text image -->
-            <div class="bg w-full h-[20%] z-[1] left-0 top-[10%] flex absolute items-center">
-
-                <div class="w-[198.94px] md:w-[343.49px] h-auto absolute  left-[40%] lg:left-[6%] text-white uppercase z-10">
-                    <img src="./assets/images/footer_text.png" alt="text footer" class=" object-contain text_footer z-[2] w-full h-auto">
-
-                    <div class="absolute z-10 left-0 top-0 w-full h-[60%] flex justify-center items-center pr-[3rem]">
-                        <p class="medium_sroke text-[2.5rem] md:text-[5rem]">Join</p>
+                    <div class="absolute bottom-0 w-[30%] h-[15.5vw] max-h-[400px] flex flex-col items-center ">
+                        <a href="https://bridge.nutzpad.com/" target="_blank" class="w-full cursor-pointer duration-200 hover:scale-110">
+                            <img src="./static/images/BRIDGE.png" alt="" class="w-full h-auto object-contain">
+                        </a>
+                        <a href="https://app.nutzpad.com/" target="_blank" class="w-[90%] cursor-pointer duration-200 hover:scale-110">
+                            <img src="./static/images/launchpad.png" alt="" class="w-full h-auto object-contain">
+                        </a>
+                        <a href="https://explorer.nutzpad.com/" target="_blank" class="w-[80%] mt-[2vw] min-[3000px]:mt-[3rem] cursor-pointer duration-200 hover:scale-110 ">
+                            <img src="./static/images/blockchain.png" alt="" class="w-full h-auto object-contain">
+                        </a>
                     </div>
 
-                    <div class="absolute z-10 left-0 bottom-0 w-full h-[40%] flex justify-end items-center  pr-[.55rem] pb-[.55rem]">
-                        <p class="medium_sroke text-[1.4rem] md:text-[2.75rem]"> maga Elon</p>
+                 </div>
+                
+                 <!-- left -->
+                 <div class="absolute w-[30vw] h-[10vw] left-[-10%] top-[40%] rotate-[25deg]">
+                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_left " data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5" >
+                       <div class="relative rotate-[-25deg]" >
+                        <img src="./static/images/ballon2.png" alt=""  class="image_style_animation float_animation" style="animation-delay: -4s;">
+                       </div>
                     </div>
-
-                </div>
+                 </div>
+             
+                <!-- right -->
+                <div class="absolute w-[25vw] h-[10vw] right-[-20%] top-[37%] rotate-[-25deg]">
+                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_right" data-scroll data-scroll-direction="horizontal" data-scroll-speed="5" >
+                       <div class="relative rotate-[25deg]" >
+                        <img src="./static/images/ballon3.png" alt=""  class="image_style_animation float_animation" style="animation-delay: -2s;">
+                       </div>
+                    </div>
+                 </div>
+               
                 <!-- cloud -->
-                <img src="./assets/images/cloud2.png" alt="cloud" class="w-[226px] object-contain h-auto absolute right-[-40px] hidden lg:block left_animation_cloud z-[0]">
-                <img src="./assets/images/cloud_left.png" alt="cloud" class="w-[186px] object-contain h-auto absolute right-[50%] hidden lg:block right_animation_cloud z-[0]">
+                <div class="w-full z-0 h-full   object-contain absolute right-0 flex_center">
+                    <img src="./static/images/Clouds_Main_top.png" alt=""  class="image_style_animation moveClouds absolute top-0" style="animation-delay: -10s;">
+
+                    <img src="./static/images/Clouds_Main_center.png" alt=""  class="image_style_animation moveClouds absolute">
+
+                    <img src="./static/images/Clouds_Main_bottom.png" alt=""  class="image_style_animation moveClouds absolute bottom-0" style="animation-delay: -5s;">
+                </div>
+
+                 <!-- left -->
+                <div class="w-[40vw] hidden max-w-[700px] h-auto object-contain absolute left-[-20%] z-[3]">
+                    <img src="./static/images/Clouds_left.png" alt=""  class="image_style_animation  absolute">
+                </div>
+
+                 <!-- right -->
+                <div class="w-[70vw] hidden max-w-[600px] h-auto object-contain absolute right-0 z-[3]  ">
+                    <img src="./static/images/Clouds_right.png" alt=""  class="image_style_animation relative">
+                </div>
+
+            </div> 
+
+            <!-- about text -->
+             <div   data-scroll-section-id="about"  id="about" class="w-full md:w-[80%] flex_center">
+              
+                <img src="./static/images/bg_paper.png" alt="paper" class="w-full h-auto object-contain">
+
+                <!-- about content -->
+                <div class="absolute Bardy_font  w-[100%] md:w-[80%] text-center text-[#fff]   max-lg:h-[50vw] text-[2vw] xl:text-[1.6vw] min-[3000px]:text-[40px] flex_center">
+                    
+                    <!-- Slider main container -->
+                  <div  id="swiper1" class="swiper"> 
+               
+                    <div class="swiper-wrapper relative  ">
+                
+                        <!-- Slides --> 
+                    <div class="swiper-slide"> 
+                        <div class="w-[75%] relative">
+                            <p class="medium_stroke max-lg:tracking-widest text-[1.8vw] lg:text-[1.4vw] min-[3000px]:text-[50px]">NUTZ ($NUTZ) is a revolutionary token that was initially launched on the Binance network and is now evolving to its own blockchain, NUTZchain, uniquely focused on the vibrant and ever-evolving world of memes.
+
+                            <br>
+                            <br>
+                            In an age where memes have become a cultural phenomenon and a powerful form of digital expression,
+                            NUTZ aims to harness this energy and provide a dedicated platform for meme creators, enthusiasts, and investors.
+                            </p>
+                        </div>
+                    </div> 
+
+                    <div class="swiper-slide"> 
+                        <div class="w-[75%] relative">
+                            <h2 class="text-[#FFD441] about_title_stroke mb-[2vw] text-[4.5vw] lg:text-[2.5vw]">
+                                NUTZ Blockchain
+                            </h2>
+                            <p class="medium_stroke text-[2.2vw] max-lg:tracking-widest lg:text-[1.7vw] min-[3000px]:text-[50px]">A dedicated blockchain designed to handle meme transactions and interactions efficiently. NUTZchain offers fast transaction speeds, low fees, and robust security to ensure the best experience for our users.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide"> 
+                        <div class="w-[75%] relative">
+                            <h2 class="text-[#FFD441] about_title_stroke mb-[2vw] text-[4.5vw] lg:text-[2.5vw]">
+                                Meme-focused Launchpad
+                            </h2>
+                            <p class="medium_stroke text-[2.2vw] max-lg:tracking-widest lg:text-[1.7vw] min-[3000px]:text-[50px]">Our Launchpad is tailored specifically for meme projects, providing a platform for meme creators to launch their tokens, raise funds, and gain visibility. This focus on memes ensures that projects receive the attention and support they need to succeed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide"> 
+                        <div class="w-[75%] relative">
+                            <h2 class="text-[#FFD441] about_title_stroke mb-[2vw] text-[4.5vw] lg:text-[2.5vw]">
+                              Upcoming Bridge
+                            </h2>
+                            <p class="medium_stroke text-[2.2vw] max-lg:tracking-widest lg:text-[1.7vw] min-[3000px]:text-[50px]">We are developing a bridge to connect NUTZchain with other major blockchains. This will enable interoperability, allowing users to move assets seamlessly between different blockchain networks and expand the reach of their meme projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide"> 
+                        <div class="w-[75%] relative">
+                            <h2 class="text-[#FFD441] about_title_stroke mb-[2vw] text-[4.5vw] lg:text-[2.5vw]">
+                              NUTZ Game
+                            </h2>
+                            <p class="medium_stroke text-[2.2vw] max-lg:tracking-widest lg:text-[1.7vw] min-[3000px]:text-[50px]">In the near future, we will introduce a game on NUTZchain that leverages the power of memes. This game will not only provide entertainment but also create additional use cases for $NUTZ tokens, driving engagement and adoption within our community.
+                            </p>
+                        </div>
+                    </div>
+
+                    </div> 
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              
+                  </div>
+ 
+                </div>
+
+             </div>
+
+        </section>
+
+
+        <!-- tokenomics section -->
+         <section data-scroll-section data-scroll-section-id="tokenomics" id="tokenomics" class=" flex_center max_width_element flex-col">
+
+            <!-- title -->
+            <div class="w-full flex_center">
+                <img src="./static/images/Tokenomics_title.png" alt="" class="w-full lg:w-[35vw] h-auto object-contain">
             </div>
+            
+            <!-- token image -->
+             <div class="token_image w-full min-[1200px]:w-[90%] h-auto  max-[1200px]:flex-col flex_between flex-wrap px-[2rem] mt-[-4vw] xl:mt-[-3rem] lg:mb-[10vw]">
+
+                <!-- token 1 -->
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[25deg] flex_center justify-center lg:justify-start">
+
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5">
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token1 ml-[-4vw] mt-[-4vw] lg:rotate-[-25deg]" >
+                  
+                            <img src="./static/images/Tax.png" alt="" class="w-[80%] lg:w-full h-auto">
+        
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2.1vw] min-[3500px]:text-[1.5vw]">
+                                <h1>buy : 5%</h1>
+                                <h1>sell 5%</h1>
+                            </div>
+        
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- token 2 -->
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[-25deg] flex_center justify-center lg:justify-start">
+
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="5">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token2 mr-[-4vw] mt-[-4vw] lg:rotate-[25deg]">
+                              
+                            <img src="./static/images/Liquidity.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2vw] min-[3500px]:text-[1.5vw]">
+                                <h1>locked 365 days</h1> 
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                </div> 
+
+                <!-- token 3 -->
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[-25deg] flex justify-center ">
+
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token3 ml-[-4vw] mt-[4vw] lg:rotate-[25deg]">
+                                
+                            <img src="./static/images/Contract.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute ca_stroke text-white flex_center flex-col scale-0 uppercase text-[2vw] lg:text-[1.1vw]   min-[3500px]:text-[1.5vw] gap-[2vw]">
+                                <p class="hidden copy-box__text">0x253855BE0319c6941626DDE3c24ba717e570aE3B</p>
+                                <h1 class=" copy-box__btn">0x253855BE0319c6941..a717e570aE3B</h1> 
+            
+                                <span class="relative flex_center copy-box cursor-pointer duration-200 hover:scale-110">
+                                    <img src="./static/images/cloud_social.png" alt="" class="w-[10vw] lg:w-[7vw] relative">
+            
+                                    <img src="./static/images/svg/copy_icon.svg" alt="" class="w-[20%]   absolute">
+                                </span>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+
+                <!-- token 4 -->
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[25deg] flex_center justify-center lg:justify-start">
+
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token4 mr-[-4vw] mt-[4vw] lg:rotate-[-25deg]">
+                            <img src="./static/images/Supply.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[1.5vw] min-[3500px]:text-[1.5vw]">
+                                <h1>total supply: 8,333,333,333</h1> 
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                </div>
+
+             </div>
+
+            <!-- token phase -->
+             <div class="w-full lg:w-[80%] xl:w-[90%] flex_center gap-[-1rem] md:gap-6 h-auto relative flex-wrap">
+
+                <div class="w-[80%] md:w-[40%] xl:w-[30%] flex_center xl:gap-4 flex-col relative " >
+
+                    <div class="title flex_center w-full  md:w-[90%] relative">
+                        <img src="./static/images/Sold.png" alt="phase" class="w-[40%] md:w-[110%]">
+                    </div>
+
+                    <div class="bg_paper thin_stroke h-[35vw] md:h-[20vw] xl:h-[200px] min-[1500px]:h-[13vw] max-h-[400px] flex_center flex-col relative text-center text-white leading-[1.1] font-bold tracking-wider text-[2.7vw] lg:text-[2.1vw] md:text-[1.4vw] xl:text-[1vw] min-[1500px]:text-[1.vw] min-[2500px]:text-[30px]"  >
+                        <p>Phase 1</p>
+                        <p>Token amount: 1.500.000.000</p>
+                        <p>Price per token: $0.0001</p>
+                    </div>
+
+                </div>
+
+                <div class="w-[80%] md:w-[40%] xl:w-[30%] flex_center xl:gap-4 flex-col relative"  >
+
+                    <div class="title flex_center w-full  md:w-[90%] relative">
+                        <img src="./static/images/Sold.png" alt="phase" class="w-[40%] md:w-[90%]"> 
+                    </div>
+
+                    <div class="bg_paper thin_stroke h-[35vw] md:h-[20vw] xl:h-[200px] min-[1500px]:h-[13vw] max-h-[400px] flex_center flex-col relative text-center text-white leading-[1.1] font-bold tracking-wider text-[2.7vw] lg:text-[2.1vw] md:text-[1.4vw] xl:text-[1vw] min-[1500px]:text-[1vw] min-[2500px]:text-[30px]"  >
+                        <p>Phase 2</p>
+                        <p>Token amount: 500.000.000</p>
+                        <p>Price per token: $0.00015</p>
+                    </div>
+
+                </div>
+
+                <div class="w-[80%] md:w-[40%] xl:w-[30%] flex_center xl:gap-4 flex-col relative" >
+
+                    <div class="title flex_center w-full  md:w-[90%] relative">
+                        <img src="./static/images/Phase3.png" alt="phase" class="w-[40%] md:w-[90%]">
+                    </div>
+
+                    <div class="bg_paper thin_stroke h-[35vw] md:h-[20vw] xl:h-[200px] min-[1500px]:h-[13vw] max-h-[400px] flex_center flex-col relative text-center text-white leading-[1.1] font-bold tracking-wider text-[2.7vw] md:text-[1.4vw] xl:text-[1vw]  min-[2500px]:text-[30px]"  >
+                        <p>Phase 3 (PinkSale Fair-Launch)</p>
+                        <p>Token amount: 2.500.000.000</p>
+                        <p>Price per token: $0.000225</p>
+                    </div>
+
+                </div>
+
+             </div>
+
+         </section>
+
+        
+         <!-- how to buy section -->
+          <section data-scroll-section data-scroll-section-id="howToBuy" id="howToBuy" class=" flex items-start justify-center flex-row w-full max-lg:flex-col h-auto mt-[10vw] max_width_element">
+
+            <div class="flex justify-center items-start flex-wrap">
+
+                <div class="w-full  lg:w-[45%]  flex items-center flex-col stickyside">
+                    <div class="w-[70%] lg:w-[60%] ">
+                     <img src="./static/images/How_tobuy.png" alt="" class="w-full h-auto object-contain ">
+                    </div>
+                    <div class="w-[90%] lg:w-[60%]">
+                     <img src="./static/images/Heli.png" alt="" class="w-full h-auto object-contain float_animation_heli">
+                    </div>
+                 </div>
+
+                 <div class="relative w-full lg:w-[45%] flex_center flex-col   max-lg:gap-[2vw] gap-[2vw] max-lg:mt-[-50vw]">
+
+                    <!-- map1 -->
+                    <div class="w-[90%] h-[44vw] xl:h-[19vw] min-[2000px]:w-[900px] min-[2000px]:h-[430px] bg_paper flex_center flex-col text-center"  >
+                        <div class="w-[8vw] xl:w-[3vw] relative">
+                            <img src="./static/images/svg/metamask_logo.svg" alt="" class="w-full h-auto object-contain">
+                        </div>
+                        <h2 class="text-white uppercase  medium_stroke text-[4vw] xl:text-[2vw] min-[2000px]:text-[35px]">dowload extension</h2>
+                        <p class="w-[70%] text-[2vw] xl:text-[1vw] min-[2000px]:text-[23px]">Download and install metamask on 
+                            the appstore, or, alterative if you’re on desktop download the browser extension</p>
+                    </div>
+    
+                    <!-- map2 -->
+                    <div class="w-[90%] h-[44vw] xl:h-[19vw] min-[2000px]:w-[900px] min-[2000px]:h-[430px] bg_paper flex_center flex-col text-center"  >
+                        <div class="w-[8vw] xl:w-[3vw] relative">
+                            <img src="./static/images/secure.png" alt="" class="w-full h-auto object-contain">
+                        </div>
+                        <h2 class="text-white uppercase  medium_stroke text-[4vw] xl:text-[2vw] min-[2000px]:text-[35px]">secure your bnb</h2>
+                        <p class="w-[70%] text-[2vw] xl:text-[1vw] min-[2000px]:text-[23px]">Download and install metamask on 
+                            the appstore, or, alterative if you’re on desktop download the browser extension</p>
+                    </div>
+                    
+                    <!-- map3 -->
+                    <div class="w-[90%] h-[44vw] xl:h-[19vw] min-[2000px]:w-[900px] min-[2000px]:h-[430px] bg_paper flex_center flex-col text-center"  >
+                        <div class="w-[8vw] xl:w-[3vw] relative">
+                            <img src="./static/images/buy_nuts.png" alt="" class="w-full h-auto object-contain">
+                        </div>
+                        <h2 class="text-white uppercase  medium_stroke text-[4vw] xl:text-[2vw] min-[2000px]:text-[35px]">buy some $nutz</h2>
+                        <p class="w-[70%] text-[2vw] xl:text-[1vw] min-[2000px]:text-[23px]">go to pancakeswap and paste the address to swap your bnb to $nutz</p>
+                    </div>
+    
+                    <!-- map4 -->
+                    <div class="w-[90%] h-[44vw] xl:h-[19vw] min-[2000px]:w-[900px] min-[2000px]:h-[430px] bg_paper flex_center flex-col text-center"  >
+                        <div class="w-[8vw] xl:w-[3vw] relative">
+                            <img src="./static/images/add_wallet.png" alt="" class="w-full h-auto object-contain">
+                        </div>
+                        <h2 class="text-white uppercase  medium_stroke text-[4vw] xl:text-[2vw] min-[2000px]:text-[35px]">add to your wallet</h2>
+                        <p class="w-[70%] text-[2vw] xl:text-[1vw] min-[2000px]:text-[23px]">now you’re all set! welcome to 
+                            the nutz pad world!</p>
+                    </div>
+    
+                </div>
+
+            </div> 
+          
+
+          </section>
+
+
+          <!-- roadmap -->
+           <section data-scroll-section   data-scroll-section-id="roadmap" id="roadmap"  class="w-full relative flex_center lg:items-start flex-col lg:h-[140vw] lg:mt-[-20vw] ">
+
+            <!-- title -->
+             <div class="w-full relative flex_center image_roadmap_title">
+                <img src="./static/images/roadmap.png" alt="roadmap" class="w-[60vw] lg:w-[40vw] h-auto object-contain title_map">
+             </div>
 
             <!-- image -->
-            <div class="contract z-[8] footer_image absolute top-[60px] min-[500px]:top-[190px] md:top-[250px] lg:top-[70px] right-[-5%] w-full lg:w-[50%] h-full">
-                <img src="./assets/images/footer_image.png" alt="contract" class="h-auto object-cover md:object-contain w-[400px] max-w-full min-[500px]:w-[400px] min-[1024px]:w-[700px] xl:w-[814px] absolute right-0 top-[-5%] footer_image_animation">
-            </div>
+             <div class="w-full lg:w-[80vw] relative flex_center mt-[-10vw] image_roadmap">
+                <div class="relative "   >
+                    <img src="./static/images/roadmap_bg.png" alt="roadmap" class="w-[60vw] h-auto object-contain relative mt-[1vw]"> 
+                </div>
+             </div>
 
-            <!-- social media -->
-            <div class="h-[30%] z-[10] w-full flex justify-center xl:justify-start xl:pl-[3%] min-[1500px]:pl-[10%] items-center absolute top-[380px] min-[500px]:top-[450px] md:top-[420px] xl:top-[320px] gap-[.35rem] xl:gap-[3.5rem] max-[500px]:justify-between max-[500px]:px-[2rem]">
+            <!-- roadmap container -->
+             <div class="w-full lg:w-[90%] lg:left-[50%] lg:translate-x-[-50%]  relative lg:absolute lg:bottom-0 max-lg:justify-center max-lg:flex-col flex_between"> 
+             
+                <!-- map -->
+              <div   class="relative max-lg:w-full flex justify-start map1 parallax lg:mt-[-21vw]" data-scroll data-scroll-speed="12">
+                <div class="w-[50vw] lg:w-[28vw] bg_papar_map relative left-0 h-[100vw] lg:h-[55vw] flex_center flex-col text-[#192941] uppercase gap-[1vw] text-center">
 
-               <div class="relative" data-aos="zoom-in"
-               data-aos-duration="1000"
-               data-aos-delay="200">
-                <a href="https://x.com/magaelonERC" target="_blank" class="social uppercase w-[71px] h-[82px] xl:w-[163px] xl:h-[185px] rounded-[16.71px] xl:rounded-[38.47px] flex items-center flex-col border-[1px] xl:border-[3px] border-black  py-[.35rem] duration-300 rotate-[6deg] hover:rotate-[0deg]">
-                    <div class="icon bg-white rounded-[16.71px] xl:rounded-[38.47px] w-[62px] h-[50px] xl:w-[90%] xl:h-[115px] border-[1px]  xl:border-[3px] border-black flex justify-center items-center">
-                       <img src="./assets/images/x-icon.svg" alt="" class="w-[50%] xl:w-[40%] h-auto object-contain">
-                    
+                    <h2 class=" bold_stroke text-white text-[7vw] lg:text-[3vw]">Step 1</h2>
+
+                    <!-- step -->
+                    <div class="flex_center gap-4 w-full mt-[1.5vw]">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">PROJECT IDEA</p>
                     </div>
-                    <p class="text-[#fff] thin_stroke text-center text-[12.75px] xl:mt-[.5rem] xl:text-[24px]">X</p>
-                 </a>
-               </div>
-
-              <div class="relative" data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              >
-                <a href="https://t.me/MagaElonPortal" target="_blank" class="social uppercase w-[71px] h-[82px] xl:w-[163px] xl:h-[185px] rounded-[16.71px] xl:rounded-[38.47px] flex items-center flex-col border-[1px] xl:border-[3px] border-black  py-[.35rem] duration-300 rotate-[-4deg] hover:rotate-[0deg]">
-                    <div class="icon bg-white rounded-[16.71px] xl:rounded-[38.47px] w-[62px] h-[50px] xl:w-[90%] xl:h-[115px] border-[1px] xl:border-[3px] border-black flex justify-center items-center">
-                       <img src="./assets/images/tele-icon.svg" alt="" class="w-[50%] xl:w-[40%] h-auto object-contain">
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Whitepaper write</p>
                     </div>
-                    <p class="text-[#fff] thin_stroke text-center text-[12.75px] xl:mt-[.5rem] xl:text-[24px]">telegram</p>
-                 </a>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Website development</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Contract deploy</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Community start</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Blockchain testnet <br>
+                            release</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Launchpad release</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">GotBit MM Partnership</p>
+                    </div> 
+
+                </div> 
               </div>
 
-            <div class="relative" data-aos="zoom-in"
-            data-aos-duration="1000"
-            data-aos-delay="400">
-                <a href="https://etherscan.io/" target="_blank" class="social uppercase w-[71px] h-[82px] xl:w-[163px] xl:h-[185px] rounded-[16.71px] xl:rounded-[38.47px] flex items-center flex-col border-[1px] xl:border-[3px] border-black  py-[.35rem] duration-300 rotate-[7deg] hover:rotate-[0deg]">
-                    <div class="icon bg-white rounded-[16.71px] xl:rounded-[38.47px] w-[62px] h-[50px] xl:w-[90%] xl:h-[115px] border-[1px] xl:border-[3px] border-black flex justify-center items-center">
-                       <img src="./assets/images/etherscan.png" alt="" class="w-[50%] xl:w-[40%] h-auto object-contain">
+                <!-- map 2 -->
+                <div class="w-[50vw] lg:w-[28vw] bg_papar_map relative h-[100vw] lg:h-[55vw] flex_center flex-col text-[#192941] uppercase gap-[1vw] max-lg:mt-[-10vw] map2 parallax lg:mt-[-15vw]" data-scroll data-scroll-speed="7">
+
+                    <h2 class=" bold_stroke text-white text-[7vw] lg:text-[3vw]">Step 2</h2>
+
+                    <!-- step -->
+                    <div class="flex_center gap-4 w-full mt-[1.5vw]">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">certik audit</p>
                     </div>
-                    <p class="text-[#fff] thin_stroke text-center text-[12.75px] xl:mt-[.5rem] xl:text-[24px]">Etherscan</p>
-                 </a>
-            </div>
- 
-
-            </div>
-
-            <!-- buy button -->
-            <a href="
-            https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x012ba3ae1074ae43a34a14bca5c4ed0af01b6e53" target="_blank" class="box_animation absolute bottom-[45px] md:bottom-[100px] w-[90%] md:w-[388px] h-[30.6px] md:h-[60.05px] min-[900px]:w-[80%] xl:w-[1302px] xl:h-[120px]  justify-center items-center overflow-hidden flex z-[999]">
-                <p class="relative duration-300 text-[#FFFFFF] z-[10] text-[16.73px] md:text-[24px] xl:text-[64px] pl-[.5rem] pt-[.55rem]">BUY MAGA ELON</p> 
-                <div class="moving-color_container">
-                    <div class="moving-color">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">presale start</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full  ">
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left"> phase 1 sold out</p>
+                    </div>
+                    <div class="flex_center gap-4 w-full "> 
+                        <img src="./static/images/svg/check.svg" alt="" class="w-[1.5vw] h-auto object-contain">
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">phase 2 sold out</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">phase 3 sold out</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Launch on PancakeSwap</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Listing on MEXC</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Burn Event</p>
                     </div>   
-                </div>
-            </a>
+                </div> 
 
-            <!-- copyright -->
-            <div class="w-full copyright h-[30px] md:h-[83px] absolute bottom-0 left-0 bg-[#151515] ink-free_font flex justify-center items-center text-white text-[11px] xl:text-[32px] gap-[2rem]">
-                <p class="w-auto md:w-[30%] md:text-center">Copyright © MAGA 2024 </p>
-                <div class="h-[50%] md:h-[50px] w-auto flex gap-[.3rem] md:gap-[1rem] justify-center relative items-center">
-                    <span class="h-full relative bg-white w-[1px] md:w-[2px]"></span>
-                    <span class="h-full relative bg-white w-[1px] md:w-[2px]"></span>
-                </div>
-                <p class="w-auto md:w-[30%] md:pl-[2rem]">Support@Magaelon.vip</p>
+                <!-- map 3 -->
+               <div  class="relative max-lg:w-full flex justify-end  mt-[-10vw]  parallax map3" data-scroll data-scroll-speed="4">
+
+                <div class="w-[50vw] lg:w-[28vw] bg_papar_map relative h-[100vw] lg:h-[55vw] flex_center flex-col text-[#192941] uppercase gap-[1vw] text-center">
+
+                    <h2 class=" bold_stroke text-white text-[7vw] lg:text-[3vw]">Step 3</h2>
+
+                    <!-- step --> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">GameFi NUTZ</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">First contract deploy <br> 
+                            on NUTZchain</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">First contract deploy <br> 
+                            on NUTZpad</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">2nd CEX listing (Tier 1)</p>
+                    </div> 
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">10,000 Holders</p>
+                    </div>  
+                    <div class="flex_center gap-4 w-full "> 
+                        <p class="text-[1.9vw] lg:text-[1.1vw] w-[40%] text-left">Special Celebration <br>
+                            Event</p>
+                    </div>  
+                  
+
+                </div> 
+               
             </div>
- 
-        </footer> 
 
+            </div>
+
+           </section>
+
+           <!-- cex listin -->
+            <section data-scroll-section data-scroll-section-id="cex" class="relative flex_center flex-col mt-[5vw]">
+              
+                <!-- title -->
+                <div class="w-full relative flex_center">
+                    <img src="./static/images/cex_title.png" alt="roadmap" class="w-[60vw] lg:w-[40vw] h-auto object-contain">
+                </div>
+
+                <!-- patner -->
+                 <div class="w-[92%] lg:w-[80%] h-[44vw] lg:h-[39vw] bg_paper relative flex_center ">
+
+                    <div class="flex_center flex-wrap w-[80%] md:w-[60%] h-[40%]   gap-[1vw]">
+
+                        <a href="https://zealy.io/" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://ave.ai/token/0x253855be0319c6941626dde3c24ba717e570ae3b-bsc" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-1.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://moontok.io/coins/nutz" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-2.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://skynet.certik.com/projects/nutz" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-3.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://www.dexview.com/bsc/0x253855BE0319c6941626DDE3c24ba717e570aE3B" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-4.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://www.dextools.io/app/" target="_blank" class="hidden w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-5.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://www.coingecko.com/" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-6.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://ntm.ai/token/0x253855be0319c6941626dde3c24ba717e570ae3b" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-7.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://www.pinksale.finance/launchpad/bsc/0x66E413DAa23878fcF4366aFD2bAC99a55f9b8De0?refId=0xf244d293d5b2735411e7E67DB5930AeE70a9322e" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-8.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://coinmarketcap.com/currencies/nutz/" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-9.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+                        <a href="https://bscscan.com/token/0xea50F7060EfC2ceA4fd1db5f0357572C359Dc755" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/Logo-10.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a> 
+                        <a href="https://www.mexc.com/" target="_blank" class="w-[9vw] md:w-[8vw] lg:w-[6vw] h-auto relative duration-300 hover:scale-110">
+                            <img src="./static/images/patner/mexc.png" alt="" class="w-full h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a> 
+                    </div>
+
+                 </div>
+
+            </section> 
+
+            <!-- card random -->
+             <section data-scroll-section class="card_container  max-w-[2000px]  mx-auto py-[2rem] flex-wrap bg_section">
+
+                <div class="cards_random max-lg:relative mx-auto max-lg:w-[50%]  overflow-hidden">
+                  <div class="random random_card_btn  flex justify-center items-center">
+                    <h1 class="text-white text-center relative z-10 text-[17px] md:text-[20px] thin_stroke font-bold uppercase">shuffle !</h1>
+                  </div>
+                </div>
+          
+                <div class="cards_container md:mt-[2rem] lg:mt-0">
+     
+                  <div class="cards_container_slide">
+                      
+                    <div class="card _1 about_card" data-set="./static/images/meme/10-min.jpg">  
+    
+                        <div class="card-inner">
+                        <div class="card-front" style="animation-delay: -2s;">
+                          <h2 class="text-white thin_stroke">OPEN</h2>
+                        </div>
+                        <div class="card-back bg-white">
+                          <img src="./static/images/meme/10-min.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="card _2 about_card" data-set="./static/images/meme/14-min.jpg">  
+    
+                        <div class="card-inner">
+                        <div class="card-front" style="animation-delay: -2s;">
+                          <h2 class="text-white thin_stroke">OPEN</h2>
+                        </div>
+                        <div class="card-back bg-white">
+                          <img src="./static/images/meme/14-min.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="card _3 about_card" data-set="./static/images/meme/19-min.jpg">   
+                        <div class="card-inner">
+                        <div class="card-front">
+                          <h2 class="text-white thin_stroke">OPEN</h2>
+                        </div>
+                        <div class="card-back bg-white">
+                          <img src="./static/images/meme/19-min.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="card _4 about_card"  data-set="./static/images/meme/8-min.jpg">   
+                        <div class="card-inner">
+                        <div class="card-front">
+                          <h2 class="text-white thin_stroke">OPEN</h2>
+                        </div>
+                        <div class="card-back bg-white">
+                          <img src="./static/images/meme/8-min.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+           
+                <div class="popUp_image hidden w-auto h-auto fixed flex justify-center items-center  left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[999] max-lg:w-[80vw] ">
+
+                    <img src="./static/images/ballon3.png" alt="" class="w-full max-w-[100%] xl:w-[35vw] max-h-[70vh] lg:max-h-[90vh] h-auto object-contain border-black border-[2px] relative image_popUp bg-white"> 
+    
+                    <div class="close_popUp w-[10vw] lg:w-[60px] h-[10vw] lg:h-[60px] rounded-full absolute border-black border-[2px] bg-white right-[-5vw] lg:right-[-20px] top-[-20px] cursor-pointer flex justify-center items-center">
+                        <img src="./static/images/svg/close.svg" alt="" class="w-[70%] h-auto object-contain "> 
+                    </div>
+
+                </div>
+          
+              </section>
+
+
+             <!-- footer -->
+              <footer data-scroll-section  class="w-full h-auto relative flex_center max-lg:flex-col max-lg:pt-[15vw] max-lg:h-[50vw] gap-[5vw]  bg-[#C7D5EA] lg:bg-transparent mt-[40vw] lg:mt-0 ">
+                
+                <!-- bg -->
+                <img src="./static/images/bg_footer.png" alt="footer" class="w-full h-auto object-cover max-lg:absolute max-lg: top-[-30vw]">
+
+                <!-- logo -->
+                <div class="relative lg:absolute  flex_center w-full bottom-[22%]">
+                    <img src="./static/images/Logo.png" alt="logo" class="w-[40vw] lg:w-[20vw] h-auto object-contain  bottom-[22%] ">
+                </div>
+
+                <!-- about footer -->
+                 <div class="w-[95%] relative lg:absolute bottom-[5%] flex_between max-lg:flex-col max-lg:gap-[5vw]">
+
+                    <!-- links -->
+                     <div class="social_footer w-full lg:w-auto object-contain flex_center gap-[3vw] lg:gap-[1vw] max-lg:flex-wrap">
+
+                        <a href="https://x.com/nutzpad" target="_blank" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/twitter_footer.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://t.me/nutzpad" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/telegram_footer.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://bscscan.com/token/0x253855be0319c6941626dde3c24ba717e570ae3b" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/bscan.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://www.dextools.io/app/" target="_blank" class="hidden duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/dextools.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://www.pinksale.finance/launchpad/bsc/0x66E413DAa23878fcF4366aFD2bAC99a55f9b8De0" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/pinksale.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://www.coingecko.com/" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/coingecko.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                        <a href="https://coinmarketcap.com/currencies/nutz/" target="_blank" class="duration-300 hover:scale-105 hover:opacity-80">
+                            <img src="./static/images/footer/coinmarketcap.png" alt="x" class="w-[9vw] lg:w-[4vw] h-auto object-contain duration-300 hover:rotate-[380deg]">
+                        </a>
+
+                     </div>
+
+                     <!-- by -->
+                      <div class="max-lg:w-full flex flex-col items-center lg:items-end by_stroke by_stroke text-[#FFD441] text-[2.5vw] lg:text-[1.2vw]">
+                        <p>support@nutzpad.com</p>
+                        <p>© 2024 Copyright nutzpad. All Rights Reserved</p>
+                      </div>
+
+                 </div>
+
+              </footer>
+
+            
 
     </div>
+ 
 
+    
+  
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- locomotive -->
+    <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.js"></script>
     <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- scroll magic -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
      <!-- aos js library animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-    <script>
-        
-        // autoplay video 
-        document.addEventListener('DOMContentLoaded', function() {
-            let video = document.querySelector('.videoAutoPlay'); 
-                video.addEventListener('canplaythrough', function() {
-                    video.play();
-                }, true);
-            });
-
-        // animation aos
-        //  scroll animation Effect
-        AOS.init({ 
-            once: true
-        });   
-
-
-// contract 
-document.addEventListener('DOMContentLoaded', function() {
-  
-  let light_left = document.querySelector('.light_left');
-  let light_right = document.querySelector('.light_right');
-  let backgroundContract = document.querySelector('.backgroundContract');
-
-  const copyContractBtns = document.querySelectorAll('.copy-contract');
-  
-  copyContractBtns.forEach(copyContractBtn => {
-      copyContractBtn.addEventListener('click', function() { 
-        
-      let copiedMessage = copyContractBtn.querySelector('.copied');
-      let contractInput = copyContractBtn.querySelector('.contractInput');
-      let movingColor_container = copyContractBtn.querySelector('.moving-color_container');
-
-        contractInput.select();
-        document.execCommand('copy');
-    
-        // Tampilkan pesan terkopikan
-        copiedMessage.classList.add('flex')
-        copiedMessage.classList.remove('hidden');
-
-        
-        // movingColor_container.classList.add('hidden')
-        // light_left.src = './assets/images/light_off_left.png'
-        // light_right.src = './assets/images/light_off_right.png'
-     
-        setTimeout(function() {
-          copiedMessage.classList.remove('flex')
-          copiedMessage.classList.add('hidden')
-        }, 2000);
-      });
-  })
-     
-    // JavaScript untuk mengganti gambar
-  const imagesLeft = [
-      './assets/images/light_off_left.png',
-      './assets/images/light_on_left1.png', 
-  ];
-
-  const imagesRight = [
-    './assets/images/light_off_right.png',
-    './assets/images/light_on_right1.png', 
-  ];
-
-  let currentIndex = 0;
-  let currentIndex2 = 0;
-  let elseTrue = false;
-
-  function changeImageLeft() { 
-      currentIndex = (currentIndex + 1) % imagesLeft.length;
-      light_left.src = imagesLeft[currentIndex];
-  }
-
-  function changeImageRight() { 
-    currentIndex2 = (currentIndex2 + 1) % imagesRight.length;
-    light_right.src = imagesRight[currentIndex2];
-  }
-
-  function bgContract() { 
-    elseTrue = !elseTrue
-    if(elseTrue === false){
-      backgroundContract.classList.add('hidden')
-    } else {
-      backgroundContract.classList.remove('hidden')
-    }
-  }
-
-  setInterval(changeImageLeft, 2000);
-  setInterval(changeImageRight, 2000);
-  setInterval(bgContract, 2000);
-
-
-  });
  
-
-
-        // text animation
-        const textElement = document.getElementById('text');
-        const cursorElement = document.getElementById('cursor');
-
-        const textArray = ["make america great again", "make america great again"];
-        let arrayIndex = 0;
-        let charIndex = 0;
- 
-        function type() {
-            if (charIndex < textArray[arrayIndex].length) { 
-                const charSpan = document.createElement('span');
-                charSpan.textContent = textArray[arrayIndex].charAt(charIndex);
-                charSpan.style.opacity = '0';  
-                textElement.appendChild(charSpan);
-        
-                TweenMax.to(charSpan, 0.5, { opacity: 1, delay: charIndex * 0.05 });
-
-                charIndex++;
-                setTimeout(type, 20);
-            } else {
-                setTimeout(erase, 2000);
-            }
-        }
-
-        function erase() {
-            if (charIndex > 0) { 
-                const charSpan = textElement.childNodes[charIndex - 1];
-                TweenMax.to(charSpan, 0.2, { opacity: 0, onComplete: () => {
-                    textElement.removeChild(charSpan);
-                }});
-
-                charIndex--;
-                setTimeout(erase, 70);
-            } else {
-                arrayIndex = (arrayIndex + 1) % textArray.length;
-                setTimeout(type, 200);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(type, 200);
-        });
-
-
-            
-  
-        // image animation
-        document.addEventListener("DOMContentLoaded", function() {
-        const image = document.querySelector('.image_make_anm');
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        image.classList.add('animate'); 
-                        observer.unobserve(entry.target);
-                    }, 100);   
-                }
-            });
-        }, { threshold: 0.1 });
-
-        observer.observe(image);
-    });
-
-
-
- 
-
-
-
-
-            // Fungsi untuk mengecek apakah elemen terlihat di viewport
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Event listener untuk event 'scroll'
-        window.addEventListener('scroll', function() {
-            const aboutSection = document.querySelector('.about_container');
-            
-            if (isElementInViewport(aboutSection)) {
-                aboutSection.classList.add('active');
-            }   
-        });
-
-
-
-    </script>
+    <script src="./static/js/index.js"></script>
 </body>
 </html>
