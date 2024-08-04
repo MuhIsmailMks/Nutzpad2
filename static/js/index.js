@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
       smooth: true
     });
  
-    window.addEventListener('resize', () => {
-      scroll.update();
-    });
+    // window.addEventListener('resize', () => {
+    //   scroll.update();
+    // });
 
   });
 
