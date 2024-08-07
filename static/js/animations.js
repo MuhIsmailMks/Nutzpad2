@@ -70,6 +70,46 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // how to buy 
+    // roadmap
+    // image
+    gsap.fromTo('.image_roadmap_container', { y: '0vw', }, {
+        y: "20vw", ease: "none", scrollTrigger: {
+            trigger: '.image_roadmap',
+            start: "50% 100%",
+            end: "100% 50%", 
+            scrub: 5,
+        }
+    });
+
+
+    // maps
+    const map1 = window.innerWidth < 1024 ? '.map1' : '.image_roadmap';
+    const map2 = window.innerWidth < 1024 ? '.map2' : '.image_roadmap';
+    const map3 = window.innerWidth < 1024 ? '.map3' : '.image_roadmap';
+
+    gsap.fromTo('.map1', { y: '0vw', }, {
+        y: "-300px", ease: "none", scrollTrigger: {
+            trigger: map1,
+            start: "50% 100%",
+            end: "100% 50%", 
+            scrub: 3,
+        }
+    });
+    gsap.fromTo('.map2', { y: '0vw', }, {
+        y: "-200px", ease: "none", scrollTrigger: {
+            trigger: map2,
+            start: "50% 100%",
+            end: "100% 50%", 
+            scrub: 3,
+        }
+    });
+    gsap.fromTo('.map3', { y: '0vw', }, {
+        y: "-100px", ease: "none", scrollTrigger: {
+            trigger: map3,
+            start: "50% 100%",
+            end: "100% 50%", 
+            scrub: 3,
+        }
+    });
 
 });
