@@ -9,7 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap" rel="stylesheet">
-  
+
+    <!-- locomotive -->
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css">
+
+    <!-- scroll magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 
     <!-- AOS scroll effect cdn --> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -18,7 +26,6 @@
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
     <!-- tailwind css cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- css link -->
@@ -27,8 +34,9 @@
 
 </head>
 <body> 
+
  
-    <div  class="max-w-[100%] wrapper flex gap-y-10 flex-col  items-center relative  overflow-hidden h-auto"  >
+    <div class="max-w-[100%] flex gap-y-10 flex-col  items-center relative  overflow-hidden h-auto"  data-scroll-container>
 
         <aside class="texture">
             <div class="bg ">
@@ -37,7 +45,7 @@
         </aside>
 
         <!-- navbar -->
-        <nav class="relative h-auto w-full z-[9999] flex_center">
+        <nav data-scroll-section class="relative h-auto w-full z-[9999] flex_center">
          
             <!-- nav  -->
             <div class="flex_between relative z-10 w-full lg:w-[70%] h-[70px] md:h-[100px] min-[2000px]:h-[140px]  px-4 md:px-[2rem] max_width_element"> 
@@ -184,7 +192,7 @@
         </nav>
 
         <!-- hero section -->
-         <section class="hero_section flex_center max_width_element lg:mt-[-5vw] min-[1500px]:mt-[-4.5vw] min-[2000px]:mt-[-1vw] flex-col z-0 ">
+         <section data-scroll-section  class="flex_center max_width_element lg:mt-[-5vw] min-[1500px]:mt-[-4.5vw] min-[2000px]:mt-[-1vw] flex-col z-0">
          
             <!-- bg hero -->
              <img src="./static/images/hero_bg.png" alt="nutz hero" class="w-[95%] lg:w-[65%] h-auto object-contain">
@@ -226,9 +234,9 @@
              </a>
 
               <!-- plane -->
-             <div class="top-[10%] w-[80%] lg:w-[45%] h-auto object-contain absolute plane_container ">
-                <div class="relative plane_animation   "  >
-                    <img src="./static/images/Plane.png" alt="nutz hero" class="w-full float_animation " style="animation-delay: -5s;">
+             <div class="top-[10%] w-[80%] lg:w-[45%] h-auto object-contain absolute max-lg:ml-[20vw] plane_animation">
+                <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="8"  >
+                    <img src="./static/images/Plane.png" alt="nutz hero" class="w-full float_animation lg:ml-[100px]" style="animation-delay: -5s;">
                 </div>
              </div>
 
@@ -252,7 +260,7 @@
          </section>
 
         <!-- about section -->
-        <section  class="about flex_center max_width_element flex-col">
+        <section data-scroll-section class=" flex_center max_width_element flex-col">
              
             <!-- about image -->
             <div class="relative w-[80%] lg:w-[65%] h-[80vw] max-h-[2000px] flex_center">
@@ -278,7 +286,7 @@
                 
                  <!-- left -->
                  <div class="absolute w-[30vw] h-[10vw] left-[-10%] top-[40%] rotate-[25deg]">
-                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_left " >
+                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_left " data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5" >
                        <div class="relative rotate-[-25deg]" >
                         <img src="./static/images/ballon2.png" alt=""  class="image_style_animation float_animation" style="animation-delay: -4s;">
                        </div>
@@ -287,7 +295,7 @@
              
                 <!-- right -->
                 <div class="absolute w-[25vw] h-[10vw] right-[-20%] top-[37%] rotate-[-25deg]">
-                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_right"  >
+                    <div class="w-[13vw] max-w-[400px] h-auto object-contain relative  z-[1] ballon_right" data-scroll data-scroll-direction="horizontal" data-scroll-speed="5" >
                        <div class="relative rotate-[25deg]" >
                         <img src="./static/images/ballon3.png" alt=""  class="image_style_animation float_animation" style="animation-delay: -2s;">
                        </div>
@@ -397,7 +405,7 @@
 
 
         <!-- tokenomics section -->
-         <section id="tokenomics" class=" flex_center max_width_element flex-col">
+         <section data-scroll-section data-scroll-section-id="tokenomics" id="tokenomics" class=" flex_center max_width_element flex-col">
 
             <!-- title -->
             <div class="w-full flex_center">
@@ -408,69 +416,81 @@
              <div class="token_image w-full min-[1200px]:w-[90%] h-auto  max-[1200px]:flex-col flex_between flex-wrap px-[2rem] mt-[-4vw] xl:mt-[-3rem] lg:mb-[10vw]">
 
                 <!-- token 1 -->
-                <div class="relative w-[42vw] h-auto lg:h-[20vw] flex_center justify-center">
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[25deg] flex_center justify-center lg:justify-start">
 
-                   <div class="relative">
-                    <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token1 ml-[-4vw] mt-[-4vw] " >
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5">
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token1 ml-[-4vw] mt-[-4vw] lg:rotate-[-25deg]" >
                   
-                        <img src="./static/images/Tax.png" alt="" class="w-[80%] lg:w-full h-auto">
-    
-                        <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2.1vw] min-[3500px]:text-[1.5vw]">
-                            <h1>buy : 5%</h1>
-                            <h1>sell 5%</h1>
+                            <img src="./static/images/Tax.png" alt="" class="w-[80%] lg:w-full h-auto">
+        
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2.1vw] min-[3500px]:text-[1.5vw]">
+                                <h1>buy : 5%</h1>
+                                <h1>sell 5%</h1>
+                            </div>
+        
                         </div>
-    
                     </div>
-                   </div>
 
                 </div>
 
                 <!-- token 2 -->
-                <div class="relative w-[42vw] h-auto lg:h-[20vw]   flex_center justify-center">
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[-25deg] flex_center justify-center lg:justify-start">
 
-                    <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token2 mr-[-4vw] mt-[-4vw] ">
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="5">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token2 mr-[-4vw] mt-[-4vw] lg:rotate-[25deg]">
                               
-                        <img src="./static/images/Liquidity.png" alt="" class="w-[80%] lg:w-full h-auto">
-        
-                        <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2vw] min-[3500px]:text-[1.5vw]">
-                            <h1>locked 365 days</h1> 
+                            <img src="./static/images/Liquidity.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[2vw] min-[3500px]:text-[1.5vw]">
+                                <h1>locked 365 days</h1> 
+                            </div>
                         </div>
+            
                     </div>
             
                 </div> 
 
                 <!-- token 3 -->
-                <div class="relative w-[42vw] h-auto lg:h-[20vw]   flex justify-center ">
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[-25deg] flex justify-center ">
 
-                    <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token3 ml-[-4vw] mt-[4vw] ">
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-5">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token3 ml-[-4vw] mt-[4vw] lg:rotate-[25deg]">
                                 
-                        <img src="./static/images/Contract.png" alt="" class="w-[80%] lg:w-full h-auto">
-        
-                        <div class="bg_paper w-full h-full absolute ca_stroke text-white flex_center flex-col scale-0 uppercase text-[2vw] lg:text-[1.1vw]   min-[3500px]:text-[1.5vw] gap-[2vw]">
-                            <p class="hidden copy-box__text">0x253855BE0319c6941626DDE3c24ba717e570aE3B</p>
-                            <h1 class=" copy-box__btn">0x253855BE0319c6941..a717e570aE3B</h1> 
-        
-                            <span class="relative flex_center copy-box cursor-pointer duration-200 hover:scale-110">
-                                <img src="./static/images/cloud_social.png" alt="" class="w-[10vw] lg:w-[7vw] relative">
-        
-                                <img src="./static/images/svg/copy_icon.svg" alt="" class="w-[20%]   absolute">
-                            </span>
-        
+                            <img src="./static/images/Contract.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute ca_stroke text-white flex_center flex-col scale-0 uppercase text-[2vw] lg:text-[1.1vw]   min-[3500px]:text-[1.5vw] gap-[2vw]">
+                                <p class="hidden copy-box__text">0x253855BE0319c6941626DDE3c24ba717e570aE3B</p>
+                                <h1 class=" copy-box__btn">0x253855BE0319c6941..a717e570aE3B</h1> 
+            
+                                <span class="relative flex_center copy-box cursor-pointer duration-200 hover:scale-110">
+                                    <img src="./static/images/cloud_social.png" alt="" class="w-[10vw] lg:w-[7vw] relative">
+            
+                                    <img src="./static/images/svg/copy_icon.svg" alt="" class="w-[20%]   absolute">
+                                </span>
+            
+                            </div>
+            
                         </div>
-        
+            
                     </div>
             
                 </div>
 
                 <!-- token 4 -->
-                <div class="relative w-[42vw] h-auto lg:h-[20vw]   flex_center justify-center">
+                <div class="relative w-[42vw] h-autolg:h-[20vw]  lg:rotate-[25deg] flex_center justify-center lg:justify-start">
 
-                    <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token4 mr-[-4vw] mt-[4vw] ">
-                        <img src="./static/images/Supply.png" alt="" class="w-[80%] lg:w-full h-auto">
-        
-                        <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[1.5vw] min-[3500px]:text-[1.5vw]">
-                            <h1>total supply: 8,333,333,333</h1> 
+                    <div class="relative" data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
+            
+                        <div class="token_hover w-[80vw] md:w-[400px] min-[1200px]:w-[30vw] relative flex_center token4 mr-[-4vw] mt-[4vw] lg:rotate-[-25deg]">
+                            <img src="./static/images/Supply.png" alt="" class="w-[80%] lg:w-full h-auto">
+            
+                            <div class="bg_paper w-full h-full absolute medium2_stroke text-white flex_center flex-col scale-0 uppercase text-[3vw] lg:text-[1.5vw] min-[3500px]:text-[1.5vw]">
+                                <h1>total supply: 8,333,333,333</h1> 
+                            </div>
                         </div>
+            
                     </div>
             
                 </div>
@@ -528,20 +548,20 @@
 
         
          <!-- how to buy section -->
-          <section id="howToBuy" class=" flex items-start justify-center flex-row w-full max-lg:flex-col h-auto mt-[10vw] max_width_element howToBuy">
+          <section data-scroll-section data-scroll-section-id="howToBuy" id="howToBuy" class=" flex items-start justify-center flex-row w-full max-lg:flex-col h-auto mt-[10vw] max_width_element">
 
-            <div class="flex justify-center  items-start flex-wrap ">
+            <div class="flex justify-center items-start flex-wrap">
 
-                <div class="w-full  lg:w-[45%]  flex items-center flex-col  lg:h-full">
+                <div class="w-full  lg:w-[45%]  flex items-center flex-col stickyside">
                     <div class="w-[70%] lg:w-[60%] ">
                      <img src="./static/images/How_tobuy.png" alt="" class="w-full h-auto object-contain ">
                     </div>
                     <div class="w-[90%] lg:w-[60%]">
-                     <img src="./static/images/Heli.png" alt="" class="w-full h-auto object-contain ">
+                     <img src="./static/images/Heli.png" alt="" class="w-full h-auto object-contain float_animation_heli">
                     </div>
                  </div>
 
-                 <div class="relative w-full lg:w-[45%] flex_center flex-col max-lg:gap-[2vw] gap-[2vw] max-lg:mt-[-50vw]">
+                 <div class="relative w-full lg:w-[45%] flex_center flex-col   max-lg:gap-[2vw] gap-[2vw] max-lg:mt-[-50vw]">
 
                     <!-- map1 -->
                     <div class="w-[90%] h-[44vw] xl:h-[19vw] min-[2000px]:w-[900px] min-[2000px]:h-[430px] bg_paper flex_center flex-col text-center"  >
@@ -591,7 +611,7 @@
 
 
           <!-- roadmap -->
-           <section   data-scroll-section-id="roadmap" id="roadmap"  class="w-full relative flex_center lg:items-start flex-col lg:h-[140vw] lg:mt-[-20vw] ">
+           <section data-scroll-section   data-scroll-section-id="roadmap" id="roadmap"  class="w-full relative flex_center lg:items-start flex-col lg:h-[140vw] lg:mt-[-20vw] ">
 
             <!-- title -->
              <div class="w-full relative flex_center image_roadmap_title">
@@ -600,7 +620,7 @@
 
             <!-- image -->
              <div class="w-full lg:w-[80vw] relative flex_center mt-[-10vw] image_roadmap">
-                <div class="relative box-c"    >
+                <div class="relative "   >
                     <img src="./static/images/roadmap_bg.png" alt="roadmap" class="w-[60vw] h-auto object-contain relative mt-[1vw]"> 
                 </div>
              </div>
@@ -728,7 +748,7 @@
            </section>
 
            <!-- cex listin -->
-            <section class="relative flex_center flex-col mt-[5vw]">
+            <section data-scroll-section data-scroll-section-id="cex" class="relative flex_center flex-col mt-[5vw]">
               
                 <!-- title -->
                 <div class="w-full relative flex_center">
@@ -784,7 +804,7 @@
             </section> 
 
             <!-- card random -->
-             <section   class="card_container  max-w-[2000px]  mx-auto py-[2rem] flex-wrap bg_section">
+             <section data-scroll-section class="card_container  max-w-[2000px]  mx-auto py-[2rem] flex-wrap bg_section">
 
                 <div class="cards_random max-lg:relative mx-auto max-lg:w-[50%]  overflow-hidden">
                   <div class="random random_card_btn  flex justify-center items-center">
@@ -859,7 +879,7 @@
 
 
              <!-- footer -->
-              <footer  class="w-full h-auto relative flex_center max-lg:flex-col max-lg:pt-[15vw] max-lg:h-[50vw] gap-[5vw]  bg-[#C7D5EA] lg:bg-transparent mt-[40vw] lg:mt-0 ">
+              <footer data-scroll-section  class="w-full h-auto relative flex_center max-lg:flex-col max-lg:pt-[15vw] max-lg:h-[50vw] gap-[5vw]  bg-[#C7D5EA] lg:bg-transparent mt-[40vw] lg:mt-0 ">
                 
                 <!-- bg -->
                 <img src="./static/images/bg_footer.png" alt="footer" class="w-full h-auto object-cover max-lg:absolute max-lg: top-[-30vw]">
@@ -917,27 +937,24 @@
 
             
 
-        </div>
+    </div>
  
-      
+
     
+  
     <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- locomotive -->
+    <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.js"></script>
     <!-- gsap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollSmoother.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- scroll magic -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
      <!-- aos js library animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
  
     <script src="./static/js/index.js"></script>
-    <script src="./static/js/animations.js"></script>
-    <!-- <script>
-      
-    
-    </script>
-  -->
 </body>
 </html>

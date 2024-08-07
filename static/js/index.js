@@ -2,19 +2,7 @@
 AOS.init({
     once: true
 });
-
-// otomotive scroll
-document.addEventListener('DOMContentLoaded', () => {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true
-    });
  
-    // window.addEventListener('resize', () => {
-    //   scroll.update();
-    // });
-
-  });
 
 // nav handler
 const menu_btn = document.querySelector('.menu_btn');
