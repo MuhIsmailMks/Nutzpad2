@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
     // hero
     const triggerElement = window.innerWidth < 1024 ? '.about' : '.hero_section';
-    const xElementHero = window.innerWidth < 1024 ? '0vw' : '50vw';
+    const xElementHero = window.innerWidth < 1024 ? '20vw' : '50vw';
 
     gsap.fromTo('.plane_animation', { x: xElementHero, }, {
         x: "-60vw", ease: "none", scrollTrigger: {
