@@ -276,7 +276,9 @@ aside {
 /* hero */
 .hero_link_animation{
   animation: bounce 2s ease infinite;
+  -webkit-animation: bounce 2s ease infinite;
 }
+
 .hero_link_animation:hover{
   animation-play-state: paused;
 }
